@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEMCL.ONE - Enterprise OSS Compliance Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #9B0002;
+            --primary-dark: #7A0001;
+            --primary-light: #C50003;
+            --black: #1a1a1a;
+            --gray: #666666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --success: #0A6E0A;
+            --warning: #B85C00;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--black);
+            background: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo strong {
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            transition: opacity 0.3s;
+            font-weight: 400;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        h1 strong {
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        h2 {
+            font-size: 2.25rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+        
+        h2 strong {
+            font-weight: 700;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .feature-section {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            padding: 2rem;
+        }
+        
+        .feature-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .feature-section.available h3 {
+            color: var(--success);
+            border-color: var(--success);
+        }
+        
+        .feature-section.development h3 {
+            color: var(--warning);
+            border-color: var(--warning);
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list strong {
+            color: var(--black);
+            font-weight: 600;
+        }
+        
+        .feature-list span {
+            color: var(--gray);
+            display: block;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .components-section {
+            background: var(--light-gray);
+        }
+        
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .component-card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            transition: box-shadow 0.3s;
+        }
+        
+        .component-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .component-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .component-name {
+            font-weight: 600;
+            color: var(--black);
+            font-size: 1.125rem;
+        }
+        
+        .component-status {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-ready {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .status-development {
+            background: var(--warning);
+            color: var(--white);
+        }
+        
+        .component-desc {
+            color: var(--gray);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .component-meta {
+            font-size: 0.75rem;
+            color: var(--gray);
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .component-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .component-links a {
+            color: var(--primary);
+            text-decoration: underline;
+            font-size: 0.875rem;
+            text-underline-offset: 2px;
+        }
+        
+        .component-links a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--white);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.875rem;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.875rem;
+        }
+        
+        footer a {
+            color: var(--white);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <strong>SEMCL.ONE</strong>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#components">Components</a></li>
+                <li><a href="https://github.com/oscarvalenzuelab/semcl.one">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1><strong>Enterprise</strong> OSS Compliance Platform</h1>
+            <p class="subtitle">Comprehensive code similarity detection and license compliance for modern software development</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">67%</div>
+                    <div class="stat-label">Complete</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Components</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">700+</div>
+                    <div class="stat-label">SPDX Licenses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="features" class="container">
+		<br/>
+        <h2><strong>Platform</strong> Capabilities</h2>
+        <div class="feature-grid">
+            <div class="feature-section available">
+                <h3>Available Features</h3>
+                <ul class="feature-list">
+                    <li>
+                        <strong>Package Download Engine</strong>
+                        <span>Automated source retrieval from PURL (npm, PyPI, Maven, Go, Cargo)</span>
+                    </li>
+                    <li>
+                        <strong>Code Pattern Mining</strong>
+                        <span>Advanced signature extraction and semantic analysis algorithms</span>
+                    </li>
+                    <li>
+                        <strong>Binary Component Scanner</strong>
+                        <span>Detection of embedded OSS components in compiled binaries</span>
+                    </li>
+                    <li>
+                        <strong>License Detection System</strong>
+                        <span>Identification of 700+ SPDX licenses with confidence scoring</span>
+                    </li>
+                    <li>
+                        <strong>AI-Powered Analysis</strong>
+                        <span>Intelligent pattern recognition using agentic framework</span>
+                    </li>
+                    <li>
+                        <strong>Metadata Extraction</strong>
+                        <span>Universal parser supporting 13 package ecosystems</span>
+                    </li>
+                    <li>
+                        <strong>Source Identification</strong>
+                        <span>Package coordinate mapping using SWHIDs and fingerprinting</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="feature-section development">
+                <h3>In Development</h3>
+                <ul class="feature-list">
+                    <li>
+                        <strong>Web Management Interface</strong>
+                        <span>Enterprise dashboard for scan submission and monitoring</span>
+                    </li>
+                    <li>
+                        <strong>RESTful API</strong>
+                        <span>Programmatic access with authentication and rate limiting</span>
+                    </li>
+                    <li>
+                        <strong>Automated Notice Generation</strong>
+                        <span>Legal document creation with attribution requirements</span>
+                    </li>
+                    <li>
+                        <strong>Batch Processing Pipeline</strong>
+                        <span>Concurrent analysis of multiple packages with queue management</span>
+                    </li>
+                    <li>
+                        <strong>Compliance Dashboard</strong>
+                        <span>Real-time metrics, trends, and risk assessment reports</span>
+                    </li>
+                    <li>
+                        <strong>CI/CD Integration</strong>
+                        <span>Native plugins for Jenkins, GitLab, GitHub Actions</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="components" class="components-section">
+        <div class="container">
+            <h2><strong>Component</strong> Status</h2>
+            <div class="component-grid">
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">Frontend UI</span>
+                        <span class="component-status status-development">In Dev</span>
+                    </div>
+                    <p class="component-desc">Web interface for scan submission and results visualization</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <small>Version: 0.0.0 | License: MIT</small>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">Backend API</span>
+                        <span class="component-status status-development">In Dev</span>
+                    </div>
+                    <p class="component-desc">Core API services with scan queue management and orchestration</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <small>Version: 0.0.0 | License: MIT</small>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">PURL to Source</span>
+                        <span class="component-status status-ready">Ready</span>
+                    </div>
+                    <p class="component-desc">Downloads source code from Package URLs (npm, PyPI, Maven, etc.)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <small>Version: 1.2.2 | License: MIT</small>
+                    <div class="component-links">
+                        <a href="https://github.com/oscarvalenzuelab/semantic-copycat-purl2src">🔗 GitHub</a>
+                        <a href="https://pypi.org/project/semantic-copycat-purl2src/">📦 PyPI</a>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">Code Miner</span>
+                        <span class="component-status status-ready">Ready</span>
+                    </div>
+                    <p class="component-desc">Extracts code patterns and performs initial license detection</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <small>Version: 1.7.0 | License: Private Beta</small>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">Binary Sniffer</span>
+                        <span class="component-status status-ready">Ready</span>
+                    </div>
+                    <p class="component-desc">Identifies hidden OSS components embedded in binary files</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <small>Version: 1.11.1 | License: MIT</small>
+                    <div class="component-links">
+                        <a href="https://github.com/oscarvalenzuelab/semantic-copycat-binarysniffer">🔗 GitHub</a>
+                        <a href="https://pypi.org/project/semantic-copycat-binarysniffer/">📦 PyPI</a>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">Open Agentic Framework</span>
+                        <span class="component-status status-ready">Ready</span>
+                    </div>
+                    <p class="component-desc">Agentic analysis framework for intelligent code pattern detection</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <small>Version: 1.1.0 | License: Apache-2.0</small>
+                    <div class="component-links">
+                        <a href="https://github.com/oscarvalenzuelab/open_agentic_framework">🔗 GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">OS License Identification Library</span>
+                        <span class="component-status status-ready">Ready</span>
+                    </div>
+                    <p class="component-desc">High-performance license detection across 700+ SPDX identifiers with confidence scores</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <small>Version: 1.2.6 | License: Apache-2.0</small>
+                    <div class="component-links">
+                        <a href="https://github.com/oscarvalenzuelab/semantic-copycat-oslili">🔗 GitHub</a>
+                        <a href="https://pypi.org/project/semantic-copycat-oslili/">📦 PyPI</a>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">PURL to Notice</span>
+                        <span class="component-status status-ready">Ready</span>
+                    </div>
+                    <p class="component-desc">Generates legal notices with licenses and copyright information</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <small>Version: 1.1.3 | License: MIT</small>
+                    <div class="component-links">
+                        <a href="https://github.com/oscarvalenzuelab/semantic-copycat-purl2notices">🔗 GitHub</a>
+                        <a href="https://pypi.org/project/semantic-copycat-purl2notices/">📦 PyPI</a>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">SCMA</span>
+                        <span class="component-status status-development">In Dev</span>
+                    </div>
+                    <p class="component-desc">SEMCL Advisory - Evolution of OSSA Scanner for semantic code copycat detection and advisory generation</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <small>Version: 0.0.0 | License: MIT</small>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">UPMEX</span>
+                        <span class="component-status status-ready">Ready</span>
+                    </div>
+                    <p class="component-desc">Universal package metadata extractor supporting 13 package ecosystems</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <small>Version: 1.5.0 | License: MIT</small>
+                    <div class="component-links">
+                        <a href="https://github.com/oscarvalenzuelab/semantic-copycat-upmex">🔗 GitHub</a>
+                        <a href="https://pypi.org/project/semantic-copycat-upmex/">📦 PyPI</a>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">Source To ID</span>
+                        <span class="component-status status-ready">Ready</span>
+                    </div>
+                    <p class="component-desc">Identifies package coordinates from source code using SWHIDs and multiple strategies</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                    <small>Version: 1.1.2 | License: AGPL-3.0</small>
+                    <div class="component-links">
+                        <a href="https://github.com/oscarvalenzuelab/semantic-copycat-src2id">🔗 GitHub</a>
+                        <a href="https://pypi.org/project/semantic-copycat-src2id/">📦 PyPI</a>
+                    </div>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-header">
+                        <span class="component-name">PURL2Risk</span>
+                        <span class="component-status status-development">In Dev</span>
+                    </div>
+                    <p class="component-desc">Comprehensive risk intelligence including CVEs, business continuity, and OSS health metrics</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <small>Version: 0.0.0 | License: MIT</small>
+                </div>
+                
+            </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <a href="https://github.com/oscarvalenzuelab/semcl.one" class="btn">
+                View on GitHub
+            </a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 SEMCL.ONE | Enterprise OSS Compliance Platform</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
