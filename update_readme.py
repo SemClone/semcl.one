@@ -185,6 +185,7 @@ def update_readme():
             'description': 'Identifies hidden OSS components embedded in binary files through signature matching',
             'license': 'MIT',
             'status': 'ready',
+            'status_override': 'complete',
             'version_override': '1.10.0'
         },
         {
@@ -194,6 +195,7 @@ def update_readme():
             'description': 'AI-powered analysis framework for intelligent code pattern detection and classification',
             'license': 'Apache-2.0',
             'status': 'ready',
+            'status_override': 'complete',
             'version_override': '1.1.0'
         },
         {
@@ -203,6 +205,7 @@ def update_readme():
             'description': 'High-performance license detection across 700+ SPDX identifiers with confidence scores',
             'license': 'Apache-2.0',
             'status': 'ready',
+            'status_override': 'complete',
             'version_override': '1.2.6'
         },
         {
@@ -212,6 +215,7 @@ def update_readme():
             'description': 'Generates legal notices with licenses and copyright information for compliance',
             'license': 'MIT',
             'status': 'ready',
+            'status_override': 'complete',
             'version_override': '1.1.3'
         },
         {
@@ -229,6 +233,7 @@ def update_readme():
             'description': 'Universal package metadata extractor supporting 13 package ecosystems',
             'license': 'MIT',
             'status': 'ready',
+            'status_override': 'complete',
             'version_override': '1.5.0'
         },
         {
@@ -238,6 +243,7 @@ def update_readme():
             'description': 'Identifies package coordinates from source code using SWHIDs and multiple strategies',
             'license': 'AGPL-3.0',
             'status': 'ready',
+            'status_override': 'complete',
             'version_override': '1.1.2'
         },
         {

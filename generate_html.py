@@ -66,7 +66,10 @@ def generate_html():
             'pypi': 'binarysniffer',
             'description': 'Identifies hidden OSS components embedded in binary files',
             'category': 'Analysis Pipeline',
-            'license': 'MIT'
+            'license': 'MIT',
+            'status_override': 'complete',
+            'completion_override': 100.0,
+            'version_override': '1.10.0'
         },
         {
             'name': 'Open Agentic Framework',
