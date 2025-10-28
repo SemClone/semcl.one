@@ -81,7 +81,7 @@ def generate_html():
             'version_override': '1.1.0'
         },
         {
-            'name': 'OS License Identification Library',
+            'name': 'OSS License ID Library',
             'component_id': 'semantic-copycat-oslili',
             'github': 'https://github.com/SemClone/osslili',
             'pypi': 'osslili',
@@ -126,10 +126,10 @@ def generate_html():
             'version_override': '1.5.0'
         },
         {
-            'name': 'Source To ID',
-            'component_id': 'semantic-copycat-src2id',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-src2id',
-            'pypi': 'semantic-copycat-src2id',
+            'name': 'Source to PURL',
+            'component_id': 'src2purl',
+            'github': 'https://github.com/SemClone/src2purl',
+            'pypi': 'src2purl',
             'description': 'Identifies package coordinates from source code using SWHIDs and multiple strategies',
             'category': 'Analysis Pipeline',
             'license': 'AGPL-3.0',

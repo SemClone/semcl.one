@@ -197,7 +197,7 @@ def update_readme():
             'version_override': '1.1.0'
         },
         {
-            'name': 'OS License Identification Library',
+            'name': 'OSS License ID Library',
             'github': 'https://github.com/SemClone/osslili',
             'pypi': 'osslili',
             'description': 'High-performance license detection across 700+ SPDX identifiers with confidence scores',
@@ -232,9 +232,9 @@ def update_readme():
             'version_override': '1.5.0'
         },
         {
-            'name': 'Source To ID',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-src2id',
-            'pypi': 'semantic-copycat-src2id',
+            'name': 'Source to PURL',
+            'github': 'https://github.com/SemClone/src2purl',
+            'pypi': 'src2purl',
             'description': 'Identifies package coordinates from source code using SWHIDs and multiple strategies',
             'license': 'AGPL-3.0',
             'status': 'ready',
