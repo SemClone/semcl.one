@@ -45,8 +45,7 @@ def generate_html():
             'category': 'Analysis Pipeline',
             'license': 'MIT',
             'status_override': 'complete',
-            'completion_override': 100.0,
-            'version_override': '1.2.3'
+            'completion_override': 100.0
         },
         {
             'name': 'Code Miner',
@@ -68,8 +67,7 @@ def generate_html():
             'category': 'Analysis Pipeline',
             'license': 'MIT',
             'status_override': 'complete',
-            'completion_override': 100.0,
-            'version_override': '1.10.0'
+            'completion_override': 100.0
         },
         {
             'name': 'Open Agentic Framework',
@@ -80,8 +78,7 @@ def generate_html():
             'category': 'Analysis Pipeline',
             'license': 'Apache-2.0',
             'status_override': 'complete',
-            'completion_override': 100.0,
-            'version_override': '1.1.0'
+            'completion_override': 100.0
         },
         {
             'name': 'OSS License ID Library',
@@ -92,8 +89,7 @@ def generate_html():
             'category': 'License Analysis',
             'license': 'Apache-2.0',
             'status_override': 'complete',
-            'completion_override': 100.0,
-            'version_override': '1.2.6'
+            'completion_override': 100.0
         },
         {
             'name': 'PURL to Notice',
@@ -104,8 +100,7 @@ def generate_html():
             'category': 'License Analysis', 
             'license': 'MIT',
             'status_override': 'complete',
-            'completion_override': 100.0,
-            'version_override': '1.1.3'
+            'completion_override': 100.0
         },
         {
             'name': 'SCMA',
@@ -125,8 +120,7 @@ def generate_html():
             'category': 'Analysis Pipeline',
             'license': 'MIT',
             'status_override': 'complete',
-            'completion_override': 100.0,
-            'version_override': '1.5.0'
+            'completion_override': 100.0
         },
         {
             'name': 'Source to PURL',
@@ -137,8 +131,7 @@ def generate_html():
             'category': 'Analysis Pipeline',
             'license': 'AGPL-3.0',
             'status_override': 'complete',
-            'completion_override': 100.0,
-            'version_override': '1.1.2'
+            'completion_override': 100.0
         },
         {
             'name': 'PURL2Risk',
