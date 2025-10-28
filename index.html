@@ -28,7 +28,7 @@
             line-height: 1.6;
             color: var(--black);
             background: var(--white);
-            padding-top: 90px; /* Account for fixed header height */
+            padding-top: 68px; /* 75% of 90px for reduced header height */
         }
         
         .container {
@@ -40,7 +40,7 @@
         header {
             background: var(--primary);
             color: var(--white);
-            padding: 1.5rem 0;
+            padding: 1.125rem 0; /* 75% of 1.5rem */
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
@@ -331,11 +331,11 @@
         
         @media (max-width: 768px) {
             body {
-                padding-top: 80px; /* Reduced padding for mobile */
+                padding-top: 60px; /* 75% of 80px for mobile */
             }
 
             header {
-                padding: 1rem 0; /* Reduced header padding on mobile */
+                padding: 0.75rem 0; /* 75% of 1rem for mobile */
             }
 
             h1 {
