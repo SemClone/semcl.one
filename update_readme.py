@@ -161,8 +161,8 @@ def update_readme():
         },
         {
             'name': 'PURL to Source',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-purl2src',
-            'pypi': 'semantic-copycat-purl2src',
+            'github': 'https://github.com/SemClone/purl2src',
+            'pypi': 'purl2src',
             'description': 'Downloads source code from Package URLs supporting npm, PyPI, Maven, Go, and more',
             'license': 'MIT',
             'status': 'ready',

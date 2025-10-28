@@ -38,9 +38,9 @@ def generate_html():
         },
         {
             'name': 'PURL to Source',
-            'component_id': 'semantic-copycat-purl2src',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-purl2src',
-            'pypi': 'semantic-copycat-purl2src',
+            'component_id': 'purl2src',
+            'github': 'https://github.com/SemClone/purl2src',
+            'pypi': 'purl2src',
             'description': 'Downloads source code from Package URLs (npm, PyPI, Maven, etc.)',
             'category': 'Analysis Pipeline',
             'license': 'MIT'
