@@ -43,7 +43,10 @@ def generate_html():
             'pypi': 'purl2src',
             'description': 'Downloads source code from Package URLs (npm, PyPI, Maven, etc.)',
             'category': 'Analysis Pipeline',
-            'license': 'MIT'
+            'license': 'MIT',
+            'status_override': 'complete',
+            'completion_override': 100.0,
+            'version_override': '1.2.3'
         },
         {
             'name': 'Code Miner',

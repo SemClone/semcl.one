@@ -166,7 +166,8 @@ def update_readme():
             'description': 'Downloads source code from Package URLs supporting npm, PyPI, Maven, Go, and more',
             'license': 'MIT',
             'status': 'ready',
-            'version_override': '0.1.1'
+            'status_override': 'complete',
+            'version_override': '1.2.3'
         },
         {
             'name': 'Code Miner',
@@ -264,7 +265,8 @@ def update_readme():
             'github_url': component.get('github', ''),
             'pypi_url': f"https://pypi.org/project/{component['pypi']}/" if component.get('pypi') else None,
             'github_exists': False,
-            'pypi_exists': False
+            'pypi_exists': False,
+            'status_override': component.get('status_override', None)
         }
         
         # Fetch GitHub stats if URL provided
@@ -285,7 +287,17 @@ def update_readme():
                 stats['pypi_exists'] = pypi_stats.get('exists', False)
                 if pypi_stats.get('version', '0.0.0') != '0.0.0' and not component.get('version_override'):
                     stats['version'] = pypi_stats['version']
-        
+
+        # Handle manual status overrides
+        if stats['status_override'] == 'complete':
+            stats['github_exists'] = True
+            if component.get('version_override'):
+                stats['version'] = component['version_override']
+        elif stats['status_override'] == 'functional':
+            stats['github_exists'] = True
+            if component.get('version_override'):
+                stats['version'] = component['version_override']
+
         # Count ready vs development
         if stats['status'] == 'ready':
             total_ready += 1
@@ -339,7 +351,7 @@ def update_readme():
             links.append("Private Repo")
         else:
             if stats['github_url']:
-                if stats['github_exists']:
+                if stats['github_exists'] or stats.get('status_override') == 'complete':
                     links.append(f"[GitHub]({stats['github_url']})")
                 else:
                     links.append("GitHub (planned)")
