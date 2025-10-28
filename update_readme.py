@@ -197,8 +197,8 @@ def update_readme():
         },
         {
             'name': 'OS License Identification Library',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-oslili',
-            'pypi': 'semantic-copycat-oslili',
+            'github': 'https://github.com/oscarvalenzuelab/osslili',
+            'pypi': 'osslili',
             'description': 'High-performance license detection across 700+ SPDX identifiers with confidence scores',
             'license': 'Apache-2.0',
             'status': 'ready',
@@ -223,8 +223,8 @@ def update_readme():
         },
         {
             'name': 'UPMEX',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-upmex',
-            'pypi': 'semantic-copycat-upmex',
+            'github': 'https://github.com/oscarvalenzuelab/upmex',
+            'pypi': 'upmex',
             'description': 'Universal package metadata extractor supporting 13 package ecosystems',
             'license': 'MIT',
             'status': 'ready',

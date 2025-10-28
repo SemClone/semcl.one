@@ -80,8 +80,8 @@ def generate_html():
         {
             'name': 'OS License Identification Library',
             'component_id': 'semantic-copycat-oslili',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-oslili',
-            'pypi': 'semantic-copycat-oslili',
+            'github': 'https://github.com/oscarvalenzuelab/osslili',
+            'pypi': 'osslili',
             'description': 'High-performance license detection across 700+ SPDX identifiers with confidence scores',
             'category': 'License Analysis',
             'license': 'Apache-2.0',
@@ -113,8 +113,8 @@ def generate_html():
         {
             'name': 'UPMEX',
             'component_id': 'semantic-copycat-upmex',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-upmex',
-            'pypi': 'semantic-copycat-upmex',
+            'github': 'https://github.com/oscarvalenzuelab/upmex',
+            'pypi': 'upmex',
             'description': 'Universal package metadata extractor supporting 13 package ecosystems',
             'category': 'Analysis Pipeline',
             'license': 'MIT',
