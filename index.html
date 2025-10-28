@@ -81,7 +81,36 @@
         .nav-links a:hover {
             opacity: 0.8;
         }
-        
+
+        .logo-section {
+            background: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            padding: 2rem;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            color: var(--gray);
+            font-style: italic;
+            background: var(--light-gray);
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .logo-placeholder p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: var(--white);
@@ -337,6 +366,15 @@
                 padding: 0.75rem 0; /* 75% of 1rem for mobile */
             }
 
+            .logo-section {
+                padding: 2rem 0; /* Reduced padding on mobile */
+            }
+
+            .logo-placeholder {
+                max-width: 250px; /* Smaller on mobile */
+                padding: 1.5rem;
+            }
+
             h1 {
                 font-size: 2rem;
             }
@@ -368,7 +406,18 @@
             </ul>
         </nav>
     </header>
-    
+
+    <section class="logo-section">
+        <div class="container">
+            <div class="logo-container">
+                <!-- Logo placeholder - add your logo here -->
+                <div class="logo-placeholder">
+                    <p>Logo goes here</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="hero">
         <div class="container">
             <h1><strong>Enterprise</strong> OSS Compliance Platform</h1>
