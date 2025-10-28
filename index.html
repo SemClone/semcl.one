@@ -64,7 +64,14 @@
         .logo strong {
             font-weight: 700;
         }
-        
+
+        .navbar-logo {
+            height: 36px;
+            width: auto;
+            display: block;
+            filter: brightness(0) invert(1); /* Make logo white for dark navbar */
+        }
+
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -337,6 +344,10 @@
                 padding: 0.75rem 0; /* 75% of 1rem for mobile */
             }
 
+            .navbar-logo {
+                height: 30px; /* Slightly smaller on mobile */
+            }
+
             h1 {
                 font-size: 2rem;
             }
@@ -359,7 +370,7 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <strong>SEMCL.ONE</strong>
+                <img src="imgs/grayscale_transparent_nobuffer.png" alt="SEMCL.ONE" class="navbar-logo">
             </div>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
