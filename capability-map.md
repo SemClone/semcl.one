@@ -23,7 +23,7 @@ graph TB
 
     subgraph "License & Compliance"
         OSLILI[OSS License ID Library<br/>License Detection]
-        NOTICE[PURL to Notice<br/>Legal Docs Generator]
+        NOTICE[PURL to Notices<br/>Legal Docs Generator]
         SCMA[SCMA<br/>Advisory Generator]
     end
 
@@ -105,7 +105,7 @@ sequenceDiagram
     
     Analyzers->>Analyzers: Agentic Framework
     Analyzers->>License: OSS License ID Library
-    License->>License: PURL to Notice
+    License->>License: PURL to Notices
     License->>Storage: Save results
     
     Frontend->>API: GET /scan/{id}
@@ -203,7 +203,7 @@ graph LR
 | **Binary Sniffer** | ✅ Ready | • ELF/PE analysis<br/>• String extraction<br/>• Symbol detection<br/>• Embedded OSS finding |
 | **Agentic Framework** | ✅ Ready | • AI-powered analysis<br/>• Pattern learning<br/>• Risk scoring<br/>• Intelligent classification |
 | **OSS License ID Library** | ✅ Ready | • 700+ SPDX licenses<br/>• Confidence scoring<br/>• Multi-method detection<br/>• Evidence collection |
-| **PURL to Notice** | 🚧 Development | • Legal notice generation<br/>• Attribution formatting<br/>• License text inclusion<br/>• Compliance documentation |
+| **PURL to Notices** | 🚧 Development | • Legal notice generation<br/>• Attribution formatting<br/>• License text inclusion<br/>• Compliance documentation |
 | **SCMA** | 🚧 Development | • Advisory generation<br/>• Semantic clone detection<br/>• Typosquatting detection<br/>• Risk assessment |
 | **UPMEX** | ✅ Ready | • Universal metadata parsing<br/>• 13 ecosystems support<br/>• Dependency extraction<br/>• SBOM data collection |
 | **Source To ID** | ✅ Ready | • SWHID generation<br/>• Package identification<br/>• Web search integration<br/>• SCANOSS fingerprinting |
