@@ -180,8 +180,8 @@ def update_readme():
         },
         {
             'name': 'Binary Sniffer',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-binarysniffer',
-            'pypi': 'semantic-copycat-binarysniffer',
+            'github': 'https://github.com/SemClone/binarysniffer',
+            'pypi': 'binarysniffer',
             'description': 'Identifies hidden OSS components embedded in binary files through signature matching',
             'license': 'MIT',
             'status': 'ready',
