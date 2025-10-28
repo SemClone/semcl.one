@@ -205,9 +205,9 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'PURL to Notice',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-purl2notices',
-            'pypi': 'semantic-copycat-purl2notices',
+            'name': 'PURL to Notices',
+            'github': 'https://github.com/SemClone/purl2notices',
+            'pypi': 'purl2notices',
             'description': 'Generates legal notices with licenses and copyright information for compliance',
             'license': 'MIT',
             'status': 'ready',

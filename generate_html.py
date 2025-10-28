@@ -92,10 +92,10 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'PURL to Notice',
+            'name': 'PURL to Notices',
             'component_id': 'semantic-copycat-purl2notice',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-purl2notices',
-            'pypi': 'semantic-copycat-purl2notices',
+            'github': 'https://github.com/SemClone/purl2notices',
+            'pypi': 'purl2notices',
             'description': 'Generates legal notices with licenses and copyright information',
             'category': 'License Analysis', 
             'license': 'MIT',
