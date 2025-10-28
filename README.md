@@ -26,13 +26,13 @@
 | **Backend API**<br/>*Core API services with scan queue management, orchestration, and webhook notifications* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
 | **PURL to Source**<br/>*Downloads source code from Package URLs supporting npm, PyPI, Maven, Go, and more* | 1.2.3 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2src) · [PyPI](https://pypi.org/project/purl2src/) |
 | **Code Miner**<br/>*Extracts code patterns and performs initial license detection using semantic analysis* | 1.7.0 | Private Beta | ✅ Ready | Private Repo |
-| **Binary Sniffer**<br/>*Identifies hidden OSS components embedded in binary files through signature matching* | 1.10.0 | MIT | ✅ Ready | GitHub (planned) · [PyPI](https://pypi.org/project/semantic-copycat-binarysniffer/) |
-| **Open Agentic Framework**<br/>*AI-powered analysis framework for intelligent code pattern detection and classification* | 1.1.0 | Apache-2.0 | ✅ Ready | GitHub (planned) |
-| **OS License Identification Library**<br/>*High-performance license detection across 700+ SPDX identifiers with confidence scores* | 1.2.6 | Apache-2.0 | ✅ Ready | GitHub (planned) · [PyPI](https://pypi.org/project/osslili/) |
-| **PURL to Notice**<br/>*Generates legal notices with licenses and copyright information for compliance* | 1.1.3 | MIT | ✅ Ready | GitHub (planned) · [PyPI](https://pypi.org/project/semantic-copycat-purl2notices/) |
+| **Binary Sniffer**<br/>*Identifies hidden OSS components embedded in binary files through signature matching* | 1.10.0 | MIT | ✅ Ready | [GitHub](https://github.com/oscarvalenzuelab/semantic-copycat-binarysniffer) · [PyPI](https://pypi.org/project/semantic-copycat-binarysniffer/) |
+| **Open Agentic Framework**<br/>*AI-powered analysis framework for intelligent code pattern detection and classification* | 1.1.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/oscarvalenzuelab/open_agentic_framework) |
+| **OS License Identification Library**<br/>*High-performance license detection across 700+ SPDX identifiers with confidence scores* | 1.2.6 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/osslili) · [PyPI](https://pypi.org/project/osslili/) |
+| **PURL to Notice**<br/>*Generates legal notices with licenses and copyright information for compliance* | 1.1.3 | MIT | ✅ Ready | [GitHub](https://github.com/oscarvalenzuelab/semantic-copycat-purl2notices) · [PyPI](https://pypi.org/project/semantic-copycat-purl2notices/) |
 | **SCMA**<br/>*SEMCL Advisory - Evolution of OSSA Scanner for semantic code copycat detection* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
-| **UPMEX**<br/>*Universal package metadata extractor supporting 13 package ecosystems* | 1.5.0 | MIT | ✅ Ready | GitHub (planned) · [PyPI](https://pypi.org/project/upmex/) |
-| **Source To ID**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.1.2 | AGPL-3.0 | ✅ Ready | GitHub (planned) · [PyPI](https://pypi.org/project/semantic-copycat-src2id/) |
+| **UPMEX**<br/>*Universal package metadata extractor supporting 13 package ecosystems* | 1.5.0 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/upmex) · [PyPI](https://pypi.org/project/upmex/) |
+| **Source To ID**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.1.2 | AGPL-3.0 | ✅ Ready | [GitHub](https://github.com/oscarvalenzuelab/semantic-copycat-src2id) · [PyPI](https://pypi.org/project/semantic-copycat-src2id/) |
 | **PURL2Risk**<br/>*Comprehensive risk intelligence including CVEs, business continuity, and OSS health metrics* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
 
 ---
