@@ -141,6 +141,17 @@ def generate_html():
             'description': 'Comprehensive risk intelligence including CVEs, business continuity, and OSS health metrics',
             'category': 'Risk Analysis',
             'license': 'MIT'
+        },
+        {
+            'name': 'OSPAC',
+            'component_id': 'ospac',
+            'github': 'https://github.com/SemClone/ospac',
+            'pypi': 'ospac',
+            'description': 'Open Source Package Analysis and Compliance tool for dependency scanning and vulnerability detection',
+            'category': 'Analysis Pipeline',
+            'license': 'Apache-2.0',
+            'status_override': 'complete',
+            'completion_override': 100.0
         }
     ]
     
