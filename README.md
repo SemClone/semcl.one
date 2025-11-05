@@ -34,7 +34,7 @@
 | **UPMEX**<br/>*Universal package metadata extractor supporting 13 package ecosystems* | 1.6.7 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/upmex) · [PyPI](https://pypi.org/project/upmex/) |
 | **Source to PURL**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.3.4 | AGPL-3.0 | ✅ Ready | [GitHub](https://github.com/SemClone/src2purl) · [PyPI](https://pypi.org/project/src2purl/) |
 | **PURL2Risk**<br/>*Comprehensive risk intelligence including CVEs, business continuity, and OSS health metrics* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
-| **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 0.1.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
+| **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.0.4 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
 
 ---
 
