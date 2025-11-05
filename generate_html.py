@@ -147,7 +147,7 @@ def generate_html():
             'component_id': 'ospac',
             'github': 'https://github.com/SemClone/ospac',
             'pypi': 'ospac',
-            'description': 'Open Source Package Analysis and Compliance tool for dependency scanning and vulnerability detection',
+            'description': 'Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files',
             'category': 'Analysis Pipeline',
             'license': 'Apache-2.0',
             'status_override': 'complete',
