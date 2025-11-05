@@ -251,7 +251,7 @@ def update_readme():
             'name': 'OSPAC',
             'github': 'https://github.com/SemClone/ospac',
             'pypi': 'ospac',
-            'description': 'Open Source Package Analysis and Compliance tool for dependency scanning and vulnerability detection',
+            'description': 'Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files',
             'license': 'Apache-2.0',
             'status': 'ready',
             'status_override': 'complete'
