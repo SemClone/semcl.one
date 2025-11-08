@@ -134,13 +134,15 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'PURL2Risk',
-            'component_id': 'semantic-copycat-purl2risk',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-purl2risk',
-            'pypi': None,
-            'description': 'Comprehensive risk intelligence including CVEs, business continuity, and OSS health metrics',
+            'name': 'VulnQ',
+            'component_id': 'vulnq',
+            'github': 'https://github.com/SemClone/vulnq',
+            'pypi': 'vulnq',
+            'description': 'Lightweight, multi-source vulnerability query tool that consolidates security data from OSV.dev, GitHub Advisory, and NIST NVD using PURLs, CPE strings, and file hashes',
             'category': 'Risk Analysis',
-            'license': 'MIT'
+            'license': 'Apache-2.0',
+            'status_override': 'complete',
+            'completion_override': 100.0
         },
         {
             'name': 'OSPAC',
