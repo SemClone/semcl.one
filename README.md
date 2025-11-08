@@ -8,9 +8,9 @@
 
 ### Overall Project Completion
 
-**69%** Complete | **9/13** Components Ready
+**77%** Complete | **10/13** Components Ready
 
-██████████████████████████████████░░░░░░░░░░░░░░░░
+██████████████████████████████████████░░░░░░░░░░░░
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ## Component Status Dashboard
 
-*Last updated: 2025-11-07*
+*Last updated: 2025-11-08*
 
 | Component | Version | License | Status | Links |
 |-----------|---------|---------|--------|-------|
@@ -33,8 +33,8 @@
 | **SCMA**<br/>*SEMCL Advisory - Evolution of OSSA Scanner for semantic code copycat detection* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
 | **UPMEX**<br/>*Universal package metadata extractor supporting 13 package ecosystems* | 1.6.7 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/upmex) · [PyPI](https://pypi.org/project/upmex/) |
 | **Source to PURL**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.3.4 | AGPL-3.0 | ✅ Ready | [GitHub](https://github.com/SemClone/src2purl) · [PyPI](https://pypi.org/project/src2purl/) |
-| **PURL2Risk**<br/>*Comprehensive risk intelligence including CVEs, business continuity, and OSS health metrics* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
-| **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.2.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
+| **VulnQ**<br/>*Lightweight, multi-source vulnerability query tool that consolidates security data from OSV.dev, GitHub Advisory, and NIST NVD using PURLs, CPE strings, and file hashes* | 1.0.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/vulnq) · [PyPI](https://pypi.org/project/vulnq/) |
+| **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.2.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
 
 ---
 
@@ -67,7 +67,7 @@
 
 | Total Components | Production Ready | In Development | SPDX Licenses Supported |
 |-----------------|------------------|----------------|-------------------------|
-| **13** | **9** | **4** | **700+** |
+| **13** | **10** | **3** | **700+** |
 
 </div>
 
