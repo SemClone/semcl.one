@@ -18,7 +18,7 @@
 
 ## Component Status Dashboard
 
-*Last updated: 2025-11-08*
+*Last updated: 2025-11-10*
 
 | Component | Version | License | Status | Links |
 |-----------|---------|---------|--------|-------|
@@ -29,7 +29,7 @@
 | **Binary Sniffer**<br/>*Identifies hidden OSS components embedded in binary files through signature matching* | 1.11.3 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/binarysniffer) · [PyPI](https://pypi.org/project/binarysniffer/) |
 | **Open Agentic Framework**<br/>*AI-powered analysis framework for intelligent code pattern detection and classification* | 0.0.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/oscarvalenzuelab/open_agentic_framework) |
 | **OSS License ID Library**<br/>*High-performance license detection across 700+ SPDX identifiers with confidence scores* | 1.5.7 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/osslili) · [PyPI](https://pypi.org/project/osslili/) |
-| **PURL to Notices**<br/>*Generates legal notices with licenses and copyright information for compliance* | 1.2.6 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2notices) · [PyPI](https://pypi.org/project/purl2notices/) |
+| **PURL to Notices**<br/>*Generates legal notices with licenses and copyright information for compliance* | 1.2.7 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2notices) · [PyPI](https://pypi.org/project/purl2notices/) |
 | **SCMA**<br/>*SEMCL Advisory - Evolution of OSSA Scanner for semantic code copycat detection* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
 | **UPMEX**<br/>*Universal package metadata extractor supporting 13 package ecosystems* | 1.6.7 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/upmex) · [PyPI](https://pypi.org/project/upmex/) |
 | **Source to PURL**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.3.4 | AGPL-3.0 | ✅ Ready | [GitHub](https://github.com/SemClone/src2purl) · [PyPI](https://pypi.org/project/src2purl/) |
