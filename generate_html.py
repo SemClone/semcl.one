@@ -154,6 +154,17 @@ def generate_html():
             'license': 'Apache-2.0',
             'status_override': 'complete',
             'completion_override': 100.0
+        },
+        {
+            'name': 'MCP-SemClone',
+            'component_id': 'mcp-semclone',
+            'github': 'https://github.com/SemClone/mcp-semclone',
+            'pypi': 'mcp-semclone',
+            'description': 'Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain',
+            'category': 'Integration Tools',
+            'license': 'Apache-2.0',
+            'status_override': 'complete',
+            'completion_override': 100.0
         }
     ]
     
