@@ -18,7 +18,7 @@
 
 ## Component Status Dashboard
 
-*Last updated: 2025-11-13*
+*Last updated: 2025-11-14*
 
 | Component | Version | License | Status | Links |
 |-----------|---------|---------|--------|-------|
@@ -35,7 +35,7 @@
 | **Source to PURL**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.3.4 | AGPL-3.0 | ✅ Ready | [GitHub](https://github.com/SemClone/src2purl) · [PyPI](https://pypi.org/project/src2purl/) |
 | **VulnQ**<br/>*Lightweight, multi-source vulnerability query tool that consolidates security data from OSV.dev, GitHub Advisory, and NIST NVD using PURLs, CPE strings, and file hashes* | 1.0.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/vulnq) · [PyPI](https://pypi.org/project/vulnq/) |
 | **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.2.3 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
-| **MCP-SemClone**<br/>*Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain* | 1.5.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/mcp-semclone) · [PyPI](https://pypi.org/project/mcp-semclone/) |
+| **MCP-SemClone**<br/>*Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain* | 1.6.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/mcp-semclone) · [PyPI](https://pypi.org/project/mcp-semclone/) |
 
 ---
 
