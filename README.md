@@ -18,7 +18,7 @@
 
 ## Component Status Dashboard
 
-*Last updated: 2025-11-14*
+*Last updated: 2025-11-15*
 
 | Component | Version | License | Status | Links |
 |-----------|---------|---------|--------|-------|
@@ -28,14 +28,14 @@
 | **Code Miner**<br/>*Extracts code patterns and performs initial license detection using semantic analysis* | 1.7.0 | Private Beta | ✅ Ready | Private Repo |
 | **Binary Sniffer**<br/>*Identifies hidden OSS components embedded in binary files through signature matching* | 1.11.3 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/binarysniffer) · [PyPI](https://pypi.org/project/binarysniffer/) |
 | **Open Agentic Framework**<br/>*AI-powered analysis framework for intelligent code pattern detection and classification* | 0.0.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/oscarvalenzuelab/open_agentic_framework) |
-| **OSS License ID Library**<br/>*High-performance license detection across 700+ SPDX identifiers with confidence scores* | 1.5.7 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/osslili) · [PyPI](https://pypi.org/project/osslili/) |
+| **OSS License ID Library**<br/>*High-performance license detection across 700+ SPDX identifiers with confidence scores* | 1.6.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/osslili) · [PyPI](https://pypi.org/project/osslili/) |
 | **PURL to Notices**<br/>*Generates legal notices with licenses and copyright information for compliance* | 1.2.7 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2notices) · [PyPI](https://pypi.org/project/purl2notices/) |
 | **SCMA**<br/>*SEMCL Advisory - Evolution of OSSA Scanner for semantic code copycat detection* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
 | **UPMEX**<br/>*Universal package metadata extractor supporting 13 package ecosystems* | 1.6.7 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/upmex) · [PyPI](https://pypi.org/project/upmex/) |
 | **Source to PURL**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.3.4 | AGPL-3.0 | ✅ Ready | [GitHub](https://github.com/SemClone/src2purl) · [PyPI](https://pypi.org/project/src2purl/) |
 | **VulnQ**<br/>*Lightweight, multi-source vulnerability query tool that consolidates security data from OSV.dev, GitHub Advisory, and NIST NVD using PURLs, CPE strings, and file hashes* | 1.0.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/vulnq) · [PyPI](https://pypi.org/project/vulnq/) |
 | **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.2.3 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
-| **MCP-SemClone**<br/>*Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain* | 1.6.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/mcp-semclone) · [PyPI](https://pypi.org/project/mcp-semclone/) |
+| **MCP-SemClone**<br/>*Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain* | 1.6.1 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/mcp-semclone) · [PyPI](https://pypi.org/project/mcp-semclone/) |
 
 ---
 
