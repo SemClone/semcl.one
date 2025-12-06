@@ -336,45 +336,45 @@ def generate_html():
         package_name = component.get('pypi', '')
         downloads = package_downloads.get(package_name, 0) if package_name else 0
 
-        # Build the metadata line (version, license only - no downloads)
+        # Build the metadata and links line (all inline)
+        # Format: vX.X.X | License | <icons> Downloads
         metadata_parts = []
 
         # Only show version if it's not 0.0.0
         if stats['version'] != '0.0.0':
-            metadata_parts.append(f"Version: {stats['version']}")
+            metadata_parts.append(f"v{stats['version']}")
 
         # Always show license
-        metadata_parts.append(f"License: {stats['license']}")
+        metadata_parts.append(stats['license'])
 
-        metadata_str = " | ".join(metadata_parts)
-
-        # Build links section with icons only
-        links_html = ""
+        # Build inline links and downloads
+        links_inline = []
         if stats['github_url']:
             if stats['github_exists'] or stats.get('status_override') == 'complete':
-                links_html += f'                        <a href="{stats["github_url"]}" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>\n'
+                links_inline.append(f'<a href="{stats["github_url"]}" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>')
         if stats['pypi_url'] and stats['pypi_exists']:
-            links_html += f'                        <a href="{stats["pypi_url"]}" title="PyPI" target="_blank" rel="noopener noreferrer"><i class="fab fa-python"></i></a>\n'
-        # Add downloads as inline item if available
+            links_inline.append(f'<a href="{stats["pypi_url"]}" title="PyPI" target="_blank" rel="noopener noreferrer"><i class="fab fa-python"></i></a>')
+
+        # Add downloads with icon if available
         if stats['version'] != '0.0.0' and downloads > 0:
-            links_html += f'                        <span class="downloads" title="Downloads (last month)"><i class="fas fa-download"></i> {format_download_count(downloads)}</span>\n'
+            links_inline.append(f'<i class="fas fa-download"></i> {format_download_count(downloads)} Downloads')
+
+        # Combine everything into one line
+        metadata_str = " | ".join(metadata_parts)
+        if links_inline:
+            metadata_str += " | " + " ".join(links_inline)
 
         component_cards_html += f"""                <div class="component-card">
                     <div class="component-header">
                         <span class="component-name">{stats['name']}</span>
                         <span class="component-status {status_class}">{status_text}</span>
                     </div>
+                    <div class="component-meta">{metadata_str}</div>
                     <p class="component-desc">{stats['description']}</p>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: {stats['completion']:.0f}%"></div>
                     </div>
-                    <small>{metadata_str}</small>
-"""
-        if links_html:
-            component_cards_html += f"""                    <div class="component-links">
-{links_html}                    </div>
-"""
-        component_cards_html += """                </div>
+                </div>
 
 """
     
