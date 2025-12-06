@@ -482,8 +482,6 @@ def generate_html():
     # Replace Platform Capabilities section with news
     features_pattern = r'<section id="features"[^>]*>.*?</section>\s*'
     news_section = f"""<section id="news" class="container">
-        <br/>
-        <h2><strong>Latest</strong> News</h2>
         <div class="news-grid">
 {news_html}        </div>
     </section>
