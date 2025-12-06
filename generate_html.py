@@ -13,6 +13,41 @@ import urllib.error
 # Import the components data from update_readme
 from update_readme import fetch_github_stats, fetch_pypi_stats, parse_github_url, calculate_completion
 
+def fetch_download_stats() -> Tuple[Optional[int], Dict[str, int]]:
+    """Fetch download statistics from status.semcl.one and return max organic downloads and per-package stats"""
+    try:
+        url = "https://status.semcl.one/data/stats.json"
+        with urllib.request.urlopen(url, timeout=10) as response:
+            data = json.loads(response.read().decode())
+
+        max_downloads = 0
+        package_downloads = {}
+
+        # Iterate through all packages in stats.json
+        if 'packages' in data:
+            for package_name, package_data in data['packages'].items():
+                if isinstance(package_data, dict) and 'recent' in package_data:
+                    recent = package_data['recent']
+                    if 'data' in recent and 'last_month_without_mirrors' in recent['data']:
+                        # Get organic downloads (without_mirrors)
+                        downloads = recent['data']['last_month_without_mirrors']
+                        package_downloads[package_name] = downloads
+                        max_downloads = max(max_downloads, downloads)
+
+        return (max_downloads if max_downloads > 0 else None, package_downloads)
+
+    except Exception as e:
+        print(f"⚠️  Warning: Could not fetch download stats: {e}")
+        import traceback
+        traceback.print_exc()
+        return (None, {})
+
+def format_download_count(count: int) -> str:
+    """Format download count in K+ format"""
+    if count >= 1000:
+        return f"{count / 1000:.1f}K+".replace('.0K+', 'K+')
+    return str(count)
+
 def generate_html():
     """Generate index.html with updated component stats"""
     
@@ -253,11 +288,15 @@ def generate_html():
     
     # Calculate overall completion
     overall_completion = (total_components_ready / len(components)) * 100
-    
+
+    # Fetch download stats
+    max_downloads, package_downloads = fetch_download_stats()
+    downloads_display = format_download_count(max_downloads) if max_downloads else "N/A"
+
     # Read existing HTML as template
     with open('index.html', 'r') as f:
         html_content = f.read()
-    
+
     # Update the overall progress - look for stat-number instead of stat-value
     html_content = re.sub(
         r'<div class="stat-number">\d+\.?\d*%</div>',
@@ -265,36 +304,61 @@ def generate_html():
         html_content,
         count=1
     )
-    
-    # Update ready count - find the 4th stat-number (the one after 8)
-    stat_numbers = re.findall(r'<div class="stat-number">(\d+)</div>', html_content)
-    if len(stat_numbers) >= 2:
-        # Replace the 3rd occurrence (Ready count)
-        pattern = r'(<div class="stat-number">8</div>.*?<div class="stat-number">)\d+(</div>)'
-        html_content = re.sub(pattern, f'\\g<1>{total_components_ready}\\g<2>', html_content, flags=re.DOTALL)
-        
-        # Replace the 4th occurrence (In Development count)
-        in_dev = len(components) - total_components_ready
-        pattern = r'(<div class="stat-number">' + str(total_components_ready) + r'</div>.*?<div class="stat-number">)\d+(</div>)'
-        html_content = re.sub(pattern, f'\\g<1>{in_dev}\\g<2>', html_content, flags=re.DOTALL)
+
+    # Update component count
+    html_content = re.sub(
+        r'(<div class="stat-card">\s*<div class="stat-number">)\d+(</div>\s*<div class="stat-label">Components</div>)',
+        f'\\g<1>{len(components)}\\g<2>',
+        html_content,
+        flags=re.DOTALL
+    )
+
+    # Update downloads count
+    html_content = re.sub(
+        r'(<div class="stat-card">\s*<div class="stat-number">)[^<]+(</div>\s*<div class="stat-label">Downloads</div>)',
+        f'\\g<1>{downloads_display}\\g<2>',
+        html_content,
+        flags=re.DOTALL
+    )
     
     # Generate component cards HTML
     component_cards_html = ""
-    for stats in component_stats:
-        is_ready = (stats['version'] != '0.0.0' or 
-                   stats.get('status_override') in ['complete', 'functional'] or 
+    for i, stats in enumerate(component_stats):
+        is_ready = (stats['version'] != '0.0.0' or
+                   stats.get('status_override') in ['complete', 'functional'] or
                    stats['completion'] >= 80.0)
-        
+
         status_class = "status-ready" if is_ready else "status-development"
         status_text = "Ready" if is_ready else "In Dev"
-        
+
+        # Get package name for downloads lookup
+        component = components[i]
+        package_name = component.get('pypi', '')
+        downloads = package_downloads.get(package_name, 0) if package_name else 0
+
+        # Build the metadata line (version, license, downloads)
+        metadata_parts = []
+
+        # Only show version if it's not 0.0.0
+        if stats['version'] != '0.0.0':
+            metadata_parts.append(f"Version: {stats['version']}")
+
+        # Always show license
+        metadata_parts.append(f"License: {stats['license']}")
+
+        # Only show downloads if version is not 0.0.0 and downloads > 0
+        if stats['version'] != '0.0.0' and downloads > 0:
+            metadata_parts.append(f"Downloads: {format_download_count(downloads)}")
+
+        metadata_str = " | ".join(metadata_parts)
+
         links_html = ""
         if stats['github_url']:
             if stats['github_exists'] or stats.get('status_override') == 'complete':
                 links_html += f'                        <a href="{stats["github_url"]}">🔗 GitHub</a>\n'
         if stats['pypi_url'] and stats['pypi_exists']:
             links_html += f'                        <a href="{stats["pypi_url"]}">📦 PyPI</a>\n'
-        
+
         component_cards_html += f"""                <div class="component-card">
                     <div class="component-header">
                         <span class="component-name">{stats['name']}</span>
@@ -304,14 +368,14 @@ def generate_html():
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: {stats['completion']:.0f}%"></div>
                     </div>
-                    <small>Version: {stats['version']} | License: {stats['license']}</small>
+                    <small>{metadata_str}</small>
 """
         if links_html:
             component_cards_html += f"""                    <div class="component-links">
 {links_html}                    </div>
 """
         component_cards_html += """                </div>
-                
+
 """
     
     # Find and replace the components section
@@ -330,10 +394,11 @@ def generate_html():
     # Write updated HTML
     with open('index.html', 'w') as f:
         f.write(html_content)
-    
+
     print(f"✅ index.html updated successfully!")
     print(f"📊 Overall completion: {overall_completion:.0f}%")
-    print(f"🎯 Components ready: {total_components_ready}/{len(components)}")
+    print(f"🎯 Components: {len(components)} total, {total_components_ready} ready")
+    print(f"📥 Downloads (last month, organic): {downloads_display}")
 
 if __name__ == "__main__":
     generate_html()
