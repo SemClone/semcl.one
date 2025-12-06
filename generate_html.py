@@ -165,6 +165,17 @@ def generate_html():
             'license': 'Apache-2.0',
             'status_override': 'complete',
             'completion_override': 100.0
+        },
+        {
+            'name': 'OSSVal',
+            'component_id': 'ossval',
+            'github': 'https://github.com/SemClone/ossval',
+            'pypi': 'ossval',
+            'description': 'Calculate the development cost savings from using open source software by analyzing SBOMs or package lists using COCOMO II models',
+            'category': 'Risk Analysis',
+            'license': 'Apache-2.0',
+            'status_override': 'complete',
+            'completion_override': 100.0
         }
     ]
     
