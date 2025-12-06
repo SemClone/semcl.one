@@ -336,7 +336,7 @@ def generate_html():
         package_name = component.get('pypi', '')
         downloads = package_downloads.get(package_name, 0) if package_name else 0
 
-        # Build the metadata line (version, license, downloads)
+        # Build the metadata line (version, license only - no downloads)
         metadata_parts = []
 
         # Only show version if it's not 0.0.0
@@ -346,18 +346,18 @@ def generate_html():
         # Always show license
         metadata_parts.append(f"License: {stats['license']}")
 
-        # Only show downloads if version is not 0.0.0 and downloads > 0
-        if stats['version'] != '0.0.0' and downloads > 0:
-            metadata_parts.append(f"Downloads: {format_download_count(downloads)}")
-
         metadata_str = " | ".join(metadata_parts)
 
+        # Build links section with icons only
         links_html = ""
         if stats['github_url']:
             if stats['github_exists'] or stats.get('status_override') == 'complete':
-                links_html += f'                        <a href="{stats["github_url"]}">🔗 GitHub</a>\n'
+                links_html += f'                        <a href="{stats["github_url"]}" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>\n'
         if stats['pypi_url'] and stats['pypi_exists']:
-            links_html += f'                        <a href="{stats["pypi_url"]}">📦 PyPI</a>\n'
+            links_html += f'                        <a href="{stats["pypi_url"]}" title="PyPI" target="_blank" rel="noopener noreferrer"><i class="fab fa-python"></i></a>\n'
+        # Add downloads as inline item if available
+        if stats['version'] != '0.0.0' and downloads > 0:
+            links_html += f'                        <span class="downloads" title="Downloads (last month)"><i class="fas fa-download"></i> {format_download_count(downloads)}</span>\n'
 
         component_cards_html += f"""                <div class="component-card">
                     <div class="component-header">
