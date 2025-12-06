@@ -9,18 +9,19 @@ from datetime import datetime, timezone
 from typing import Dict, List, Optional, Tuple
 import urllib.request
 import urllib.error
+import xml.etree.ElementTree as ET
 
 # Import the components data from update_readme
 from update_readme import fetch_github_stats, fetch_pypi_stats, parse_github_url, calculate_completion
 
 def fetch_download_stats() -> Tuple[Optional[int], Dict[str, int]]:
-    """Fetch download statistics from status.semcl.one and return max organic downloads and per-package stats"""
+    """Fetch download statistics from status.semcl.one and return total organic downloads and per-package stats"""
     try:
         url = "https://status.semcl.one/data/stats.json"
         with urllib.request.urlopen(url, timeout=10) as response:
             data = json.loads(response.read().decode())
 
-        max_downloads = 0
+        total_downloads = 0
         package_downloads = {}
 
         # Iterate through all packages in stats.json
@@ -32,9 +33,9 @@ def fetch_download_stats() -> Tuple[Optional[int], Dict[str, int]]:
                         # Get organic downloads (without_mirrors)
                         downloads = recent['data']['last_month_without_mirrors']
                         package_downloads[package_name] = downloads
-                        max_downloads = max(max_downloads, downloads)
+                        total_downloads += downloads
 
-        return (max_downloads if max_downloads > 0 else None, package_downloads)
+        return (total_downloads if total_downloads > 0 else None, package_downloads)
 
     except Exception as e:
         print(f"⚠️  Warning: Could not fetch download stats: {e}")
@@ -47,6 +48,63 @@ def format_download_count(count: int) -> str:
     if count >= 1000:
         return f"{count / 1000:.1f}K+".replace('.0K+', 'K+')
     return str(count)
+
+def fetch_rss_news(limit: int = 3) -> List[Dict[str, str]]:
+    """Fetch latest news from RSS feed"""
+    try:
+        url = "https://community.semcl.one/feed.xml"
+        with urllib.request.urlopen(url, timeout=10) as response:
+            xml_content = response.read().decode('utf-8')
+
+        root = ET.fromstring(xml_content)
+        channel = root.find('channel')
+        if not channel:
+            return []
+
+        news_items = []
+        for item in channel.findall('item')[:limit]:
+            title_elem = item.find('title')
+            link_elem = item.find('link')
+            desc_elem = item.find('description')
+            date_elem = item.find('pubDate')
+
+            if title_elem is not None and link_elem is not None:
+                # Extract image from description if present
+                image_url = None
+                description = ""
+                if desc_elem is not None and desc_elem.text:
+                    desc_text = desc_elem.text
+                    # Try to extract image URL from CDATA
+                    img_match = re.search(r'<img[^>]+src="([^"]+)"', desc_text)
+                    if img_match:
+                        image_url = img_match.group(1)
+                    # Extract text content, removing HTML and truncating
+                    text_content = re.sub(r'<[^>]+>', '', desc_text)
+                    description = ' '.join(text_content.split()[:20]) + '...'
+
+                # Parse and format date
+                date_str = ""
+                if date_elem is not None and date_elem.text:
+                    try:
+                        # Parse RSS date format: "Wed, 04 Dec 2025 00:00:00 +0000"
+                        date_obj = datetime.strptime(date_elem.text, '%a, %d %b %Y %H:%M:%S %z')
+                        date_str = date_obj.strftime('%B %d, %Y')
+                    except:
+                        date_str = date_elem.text
+
+                news_items.append({
+                    'title': title_elem.text,
+                    'link': link_elem.text,
+                    'description': description,
+                    'image': image_url,
+                    'date': date_str
+                })
+
+        return news_items
+
+    except Exception as e:
+        print(f"⚠️  Warning: Could not fetch RSS feed: {e}")
+        return []
 
 def generate_html():
     """Generate index.html with updated component stats"""
@@ -370,7 +428,7 @@ def generate_html():
                         <span class="component-status {status_class}">{status_text}</span>
                     </div>
                     <div class="component-meta">{metadata_str}</div>
-                    <p class="component-desc">{stats['description']}</p>
+                    <p class="component-desc" style="margin-top: 1rem;">{stats['description']}</p>
                     <div class="progress-bar">
                         <div class="progress-fill" style="width: {stats['completion']:.0f}%"></div>
                     </div>
@@ -382,7 +440,44 @@ def generate_html():
     pattern = r'(<div class="component-grid">)(.*?)(</div>\s*</section>)'
     replacement = f'\\1\n{component_cards_html}            \\3'
     html_content = re.sub(pattern, replacement, html_content, flags=re.DOTALL)
-    
+
+    # Fetch and generate news section
+    news_items = fetch_rss_news(limit=3)
+    news_html = ""
+    if news_items:
+        for news in news_items:
+            image_html = ""
+            if news['image']:
+                image_html = f"""                        <div class="news-image">
+                            <a href="{news['link']}" target="_blank">
+                                <img src="{news['image']}" alt="{news['title']}">
+                            </a>
+                        </div>
+"""
+            news_html += f"""                    <div class="news-card">
+{image_html}                        <div class="news-content">
+                            <h3 class="news-title">
+                                <a href="{news['link']}" target="_blank">{news['title']}</a>
+                            </h3>
+                            <p class="news-desc">{news['description']}</p>
+                            <div class="news-date">{news['date']}</div>
+                        </div>
+                    </div>
+
+"""
+
+    # Replace Platform Capabilities section with news
+    features_pattern = r'<section id="features"[^>]*>.*?</section>\s*'
+    news_section = f"""<section id="news" class="container">
+        <br/>
+        <h2><strong>Latest</strong> News</h2>
+        <div class="news-grid">
+{news_html}        </div>
+    </section>
+
+"""
+    html_content = re.sub(features_pattern, news_section, html_content, flags=re.DOTALL)
+
     # Update the last updated timestamp
     timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
     html_content = re.sub(
