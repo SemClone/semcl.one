@@ -265,6 +265,15 @@ def update_readme():
             'license': 'Apache-2.0',
             'status': 'ready',
             'status_override': 'complete'
+        },
+        {
+            'name': 'OSSVal',
+            'github': 'https://github.com/SemClone/ossval',
+            'pypi': 'ossval',
+            'description': 'Calculate the development cost savings from using open source software by analyzing SBOMs or package lists using COCOMO II models',
+            'license': 'Apache-2.0',
+            'status': 'ready',
+            'status_override': 'complete'
         }
     ]
     
