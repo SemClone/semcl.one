@@ -378,10 +378,24 @@ def generate_html():
         html_content,
         flags=re.DOTALL
     )
-    
+
+    # Sort components: Ready components first, then In Dev components
+    # We need to create tuples of (component, stats) to keep them paired
+    component_pairs = list(zip(components, component_stats))
+
+    def sort_key(pair):
+        _, stats = pair
+        is_ready = (stats['version'] != '0.0.0' or
+                   stats.get('status_override') in ['complete', 'functional'] or
+                   stats['completion'] >= 80.0)
+        # Return 0 for ready (first), 1 for in dev (last)
+        return 0 if is_ready else 1
+
+    component_pairs.sort(key=sort_key)
+
     # Generate component cards HTML
     component_cards_html = ""
-    for i, stats in enumerate(component_stats):
+    for component, stats in component_pairs:
         is_ready = (stats['version'] != '0.0.0' or
                    stats.get('status_override') in ['complete', 'functional'] or
                    stats['completion'] >= 80.0)
@@ -389,8 +403,7 @@ def generate_html():
         status_class = "status-ready" if is_ready else "status-development"
         status_text = "Ready" if is_ready else "In Dev"
 
-        # Get package name for downloads lookup
-        component = components[i]
+        # Get package name for downloads lookup (component is already available from the loop)
         package_name = component.get('pypi', '')
         downloads = package_downloads.get(package_name, 0) if package_name else 0
 
