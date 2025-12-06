@@ -8,9 +8,9 @@
 
 ### Overall Project Completion
 
-**79%** Complete | **11/14** Components Ready
+**80%** Complete | **12/15** Components Ready
 
-███████████████████████████████████████░░░░░░░░░░░
+████████████████████████████████████████░░░░░░░░░░
 
 </div>
 
@@ -36,6 +36,7 @@
 | **VulnQ**<br/>*Lightweight, multi-source vulnerability query tool that consolidates security data from OSV.dev, GitHub Advisory, and NIST NVD using PURLs, CPE strings, and file hashes* | 1.0.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/vulnq) · [PyPI](https://pypi.org/project/vulnq/) |
 | **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.2.3 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
 | **MCP-SemClone**<br/>*Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain* | 1.6.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/mcp-semclone) · [PyPI](https://pypi.org/project/mcp-semclone/) |
+| **OSSVal**<br/>*Calculate the development cost savings from using open source software by analyzing SBOMs or package lists using COCOMO II models* | 1.0.1 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ossval) · [PyPI](https://pypi.org/project/ossval/) |
 
 ---
 
@@ -68,7 +69,7 @@
 
 | Total Components | Production Ready | In Development | SPDX Licenses Supported |
 |-----------------|------------------|----------------|-------------------------|
-| **14** | **11** | **3** | **700+** |
+| **15** | **12** | **3** | **700+** |
 
 </div>
 
