@@ -426,9 +426,9 @@ def generate_html():
         if stats['pypi_url'] and stats['pypi_exists']:
             links_inline.append(f'<a href="{stats["pypi_url"]}" title="PyPI" target="_blank" rel="noopener noreferrer"><i class="fab fa-python"></i></a>')
 
-        # Add downloads with icon if available
+        # Add downloads if available
         if stats['version'] != '0.0.0' and downloads > 0:
-            links_inline.append(f'<i class="fas fa-download"></i> {format_download_count(downloads)} Downloads')
+            links_inline.append(f'{format_download_count(downloads)} Downloads')
 
         # Combine everything into one line
         metadata_str = " | ".join(metadata_parts)
