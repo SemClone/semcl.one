@@ -499,15 +499,15 @@ def generate_html():
 
 """
 
-    # Replace Platform Capabilities section with news
-    features_pattern = r'<section id="features"[^>]*>.*?</section>\s*'
+    # Replace news section with updated content
+    news_pattern = r'<section id="news"[^>]*>.*?</section>\s*'
     news_section = f"""<section id="news" class="container">
         <div class="news-grid">
 {news_html}        </div>
     </section>
 
 """
-    html_content = re.sub(features_pattern, news_section, html_content, flags=re.DOTALL)
+    html_content = re.sub(news_pattern, news_section, html_content, flags=re.DOTALL)
 
     # Update the last updated timestamp
     timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
