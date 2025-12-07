@@ -14,8 +14,12 @@ import xml.etree.ElementTree as ET
 # Import the components data from update_readme
 from update_readme import fetch_github_stats, fetch_pypi_stats, parse_github_url, calculate_completion
 
-def fetch_download_stats() -> Tuple[Optional[int], Dict[str, int]]:
-    """Fetch download statistics from status.semcl.one and return total organic downloads and per-package stats"""
+def fetch_download_stats(valid_packages: List[str]) -> Tuple[Optional[int], Dict[str, int]]:
+    """Fetch download statistics from status.semcl.one and return total organic downloads and per-package stats
+
+    Args:
+        valid_packages: List of PyPI package names to include in the total count
+    """
     try:
         url = "https://status.semcl.one/data/stats.json"
         with urllib.request.urlopen(url, timeout=10) as response:
@@ -33,7 +37,9 @@ def fetch_download_stats() -> Tuple[Optional[int], Dict[str, int]]:
                         # Get organic downloads (without_mirrors)
                         downloads = recent['data']['last_month_without_mirrors']
                         package_downloads[package_name] = downloads
-                        total_downloads += downloads
+                        # Only count downloads for packages in our components list
+                        if package_name in valid_packages:
+                            total_downloads += downloads
 
         return (total_downloads if total_downloads > 0 else None, package_downloads)
 
@@ -190,7 +196,18 @@ def generate_html():
             'github': 'https://github.com/SemClone/purl2notices',
             'pypi': 'purl2notices',
             'description': 'Generates legal notices with licenses and copyright information',
-            'category': 'License Analysis', 
+            'category': 'License Analysis',
+            'license': 'MIT',
+            'status_override': 'complete',
+            'completion_override': 100.0
+        },
+        {
+            'name': 'OSS Notices',
+            'component_id': 'ossnotices',
+            'github': 'https://github.com/SemClone/ossnotices',
+            'pypi': 'ossnotices',
+            'description': 'Simplified CLI wrapper for generating open source legal notices',
+            'category': 'License Analysis',
             'license': 'MIT',
             'status_override': 'complete',
             'completion_override': 100.0
@@ -347,9 +364,12 @@ def generate_html():
     # Calculate overall completion
     overall_completion = (total_components_ready / len(components)) * 100
 
-    # Fetch download stats
-    max_downloads, package_downloads = fetch_download_stats()
-    downloads_display = format_download_count(max_downloads) if max_downloads else "N/A"
+    # Get list of valid PyPI package names from components
+    valid_pypi_packages = [c['pypi'] for c in components if c.get('pypi')]
+
+    # Fetch download stats (only for packages in our components list)
+    total_downloads, package_downloads = fetch_download_stats(valid_pypi_packages)
+    downloads_display = format_download_count(total_downloads) if total_downloads else "N/A"
 
     # Read existing HTML as template
     with open('index.html', 'r') as f:
