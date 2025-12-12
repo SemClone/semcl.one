@@ -1,10 +1,17 @@
-name: Daily Data Update
+name: Auto-Update Stats
 
 on:
   schedule:
-    # Run daily at 6:00 AM UTC
-    - cron: '0 6 * * *'
+    # Run every 6 hours to keep stats fresh
+    - cron: '0 */6 * * *'
   workflow_dispatch: # Allow manual triggering
+  push:
+    branches:
+      - main
+    paths:
+      - 'generate_html.py'
+      - 'update_readme.py'
+      - '.github/workflows/update-data.yml'
 
 jobs:
   update-data:
@@ -43,13 +50,27 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
+      - name: Verify stats.json accessibility
+        run: |
+          echo "Checking status.semcl.one/data/stats.json accessibility..."
+          curl -f -s -o /tmp/stats.json https://status.semcl.one/data/stats.json
+          echo "Last updated: $(jq -r '.last_updated' /tmp/stats.json)"
+          echo "Packages found: $(jq '.packages | length' /tmp/stats.json)"
+          rm /tmp/stats.json
+
       - name: Update README with latest component stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Running update_readme.py..."
           python3 update_readme.py
-          echo "README update completed"
+
+          if [ $? -eq 0 ]; then
+            echo "✅ README update completed successfully"
+          else
+            echo "❌ README update failed"
+            exit 1
+          fi
 
       - name: Update website with latest component data
         env:
@@ -57,7 +78,21 @@ jobs:
         run: |
           echo "Running generate_html.py..."
           python3 generate_html.py
-          echo "Website update completed"
+
+          if [ $? -eq 0 ]; then
+            echo "✅ Website update completed successfully"
+
+            # Verify downloads stat was updated in HTML
+            downloads=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Downloads)' index.html || echo "not found")
+            echo "Downloads stat in HTML: $downloads"
+
+            if [ "$downloads" = "N/A" ] || [ "$downloads" = "n/a" ] || [ "$downloads" = "not found" ]; then
+              echo "⚠️ Warning: Downloads stat is '$downloads' - data may not be loading correctly"
+            fi
+          else
+            echo "❌ Website update failed"
+            exit 1
+          fi
 
       - name: Check for changes
         id: changes
@@ -74,27 +109,44 @@ jobs:
       - name: Commit and push changes
         if: steps.changes.outputs.changes == 'true'
         run: |
-          git add README.md index.html
-          git commit -m "chore: update component data and stats
+          # Extract current downloads stat for commit message
+          downloads=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Downloads)' index.html || echo "unknown")
 
-          - Updated README.md with latest component versions and stats
-          - Updated index.html with current project status
-          - Automated update via GitHub Actions"
+          git add README.md index.html
+          git commit -m "chore: auto-update component stats [skip ci]
+
+          - Downloads: $downloads (last month, organic)
+          - Updated at: $(date -u '+%Y-%m-%d %H:%M UTC')
+          - Data source: status.semcl.one/data/stats.json"
           git push
 
       - name: Create summary
         run: |
-          echo "## Daily Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## Auto-Update Stats Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Show current stats
+          downloads=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Downloads)' index.html || echo "unknown")
+          completion=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Complete)' index.html || echo "unknown")
+          components=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Components)' index.html || echo "unknown")
+
+          echo "### Current Stats" >> $GITHUB_STEP_SUMMARY
+          echo "- 📥 **Downloads**: $downloads" >> $GITHUB_STEP_SUMMARY
+          echo "- 📊 **Completion**: $completion" >> $GITHUB_STEP_SUMMARY
+          echo "- 🎯 **Components**: $components" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
           if [ "${{ steps.changes.outputs.changes }}" == "true" ]; then
-            echo "✅ **Changes detected and committed**" >> $GITHUB_STEP_SUMMARY
+            echo "### ✅ Changes Committed" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "Updated files:" >> $GITHUB_STEP_SUMMARY
             git diff --name-only HEAD~1 HEAD | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY
           else
-            echo "ℹ️ **No changes detected**" >> $GITHUB_STEP_SUMMARY
+            echo "### ℹ️ No Changes" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "All component data is already up to date." >> $GITHUB_STEP_SUMMARY
           fi
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
           echo "**Run completed at:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Data source:** https://status.semcl.one/data/stats.json" >> $GITHUB_STEP_SUMMARY
