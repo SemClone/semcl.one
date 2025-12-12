@@ -22,8 +22,13 @@ def fetch_download_stats(valid_packages: List[str]) -> Tuple[Optional[int], Dict
     """
     try:
         url = "https://status.semcl.one/data/stats.json"
+        print(f"📊 Fetching download stats from {url}...")
+
         with urllib.request.urlopen(url, timeout=10) as response:
             data = json.loads(response.read().decode())
+
+        if 'last_updated' in data:
+            print(f"   Stats last updated: {data['last_updated']}")
 
         total_downloads = 0
         package_downloads = {}
@@ -41,10 +46,18 @@ def fetch_download_stats(valid_packages: List[str]) -> Tuple[Optional[int], Dict
                         if package_name in valid_packages:
                             total_downloads += downloads
 
+        print(f"   Found download data for {len(package_downloads)} packages")
+        print(f"   Total downloads (organic): {total_downloads:,}")
         return (total_downloads if total_downloads > 0 else None, package_downloads)
 
+    except urllib.error.HTTPError as e:
+        print(f"❌ HTTP Error fetching download stats: {e.code} {e.reason}")
+        return (None, {})
+    except urllib.error.URLError as e:
+        print(f"❌ URL Error fetching download stats: {e.reason}")
+        return (None, {})
     except Exception as e:
-        print(f"⚠️  Warning: Could not fetch download stats: {e}")
+        print(f"❌ Unexpected error fetching download stats: {e}")
         import traceback
         traceback.print_exc()
         return (None, {})
@@ -370,6 +383,11 @@ def generate_html():
     # Fetch download stats (only for packages in our components list)
     total_downloads, package_downloads = fetch_download_stats(valid_pypi_packages)
     downloads_display = format_download_count(total_downloads) if total_downloads else "N/A"
+
+    # Log packages without download data
+    missing_packages = [pkg for pkg in valid_pypi_packages if pkg not in package_downloads]
+    if missing_packages:
+        print(f"⚠️  Packages without download data in stats.json: {', '.join(missing_packages)}")
 
     # Read existing HTML as template
     with open('index.html', 'r') as f:
