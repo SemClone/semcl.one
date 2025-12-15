@@ -83,7 +83,7 @@ jobs:
             echo "✅ Website update completed successfully"
 
             # Verify downloads stat was updated in HTML
-            downloads=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Downloads)' index.html || echo "not found")
+            downloads=$(grep -B 1 'stat-label">Downloads' index.html | grep 'stat-number' | grep -oP '>\K[^<]+' || echo "not found")
             echo "Downloads stat in HTML: $downloads"
 
             if [ "$downloads" = "N/A" ] || [ "$downloads" = "n/a" ] || [ "$downloads" = "not found" ]; then
@@ -110,7 +110,7 @@ jobs:
         if: steps.changes.outputs.changes == 'true'
         run: |
           # Extract current downloads stat for commit message
-          downloads=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Downloads)' index.html || echo "unknown")
+          downloads=$(grep -B 1 'stat-label">Downloads' index.html | grep 'stat-number' | grep -oP '>\K[^<]+' || echo "unknown")
 
           git add README.md index.html
           git commit -m "chore: auto-update component stats [skip ci]
@@ -126,9 +126,9 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
 
           # Show current stats
-          downloads=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Downloads)' index.html || echo "unknown")
-          completion=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Complete)' index.html || echo "unknown")
-          components=$(grep -oP 'stat-number">\K[^<]+(?=</div>\s*<div class="stat-label">Components)' index.html || echo "unknown")
+          downloads=$(grep -B 1 'stat-label">Downloads' index.html | grep 'stat-number' | grep -oP '>\K[^<]+' || echo "unknown")
+          completion=$(grep -B 1 'stat-label">Complete' index.html | grep 'stat-number' | grep -oP '>\K[^<]+' || echo "unknown")
+          components=$(grep -B 1 'stat-label">Components' index.html | grep 'stat-number' | grep -oP '>\K[^<]+' || echo "unknown")
 
           echo "### Current Stats" >> $GITHUB_STEP_SUMMARY
           echo "- 📥 **Downloads**: $downloads" >> $GITHUB_STEP_SUMMARY
