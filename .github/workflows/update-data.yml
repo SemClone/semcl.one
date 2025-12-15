@@ -115,7 +115,7 @@ jobs:
           git add README.md index.html
           git commit -m "chore: auto-update component stats [skip ci]
 
-          - Downloads: $downloads (last month, organic)
+          - Downloads: $downloads (all-time, organic)
           - Updated at: $(date -u '+%Y-%m-%d %H:%M UTC')
           - Data source: status.semcl.one/data/stats.json"
           git push
