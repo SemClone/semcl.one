@@ -38,16 +38,16 @@ def fetch_download_stats(valid_packages: List[str]) -> Tuple[Optional[int], Dict
             for package_name, package_data in data['packages'].items():
                 if isinstance(package_data, dict) and 'recent' in package_data:
                     recent = package_data['recent']
-                    if 'data' in recent and 'last_month_without_mirrors' in recent['data']:
-                        # Get organic downloads (without_mirrors)
-                        downloads = recent['data']['last_month_without_mirrors']
+                    if 'data' in recent and 'total_without_mirrors' in recent['data']:
+                        # Get total organic downloads (without_mirrors)
+                        downloads = recent['data']['total_without_mirrors']
                         package_downloads[package_name] = downloads
                         # Only count downloads for packages in our components list
                         if package_name in valid_packages:
                             total_downloads += downloads
 
         print(f"   Found download data for {len(package_downloads)} packages")
-        print(f"   Total downloads (organic): {total_downloads:,}")
+        print(f"   Total downloads (all-time, organic): {total_downloads:,}")
         return (total_downloads if total_downloads > 0 else None, package_downloads)
 
     except urllib.error.HTTPError as e:
@@ -63,8 +63,10 @@ def fetch_download_stats(valid_packages: List[str]) -> Tuple[Optional[int], Dict
         return (None, {})
 
 def format_download_count(count: int) -> str:
-    """Format download count in K+ format"""
-    if count >= 1000:
+    """Format download count in K+/M+ format"""
+    if count >= 1000000:
+        return f"{count / 1000000:.1f}M+".replace('.0M+', 'M+')
+    elif count >= 1000:
         return f"{count / 1000:.1f}K+".replace('.0K+', 'K+')
     return str(count)
 
@@ -542,7 +544,7 @@ def generate_html():
     print(f"✅ index.html updated successfully!")
     print(f"📊 Overall completion: {overall_completion:.0f}%")
     print(f"🎯 Components: {len(components)} total, {total_components_ready} ready")
-    print(f"📥 Downloads (last month, organic): {downloads_display}")
+    print(f"📥 Downloads (all-time, organic): {downloads_display}")
 
 if __name__ == "__main__":
     generate_html()
