@@ -395,6 +395,25 @@ def generate_html():
     with open('index.html', 'r') as f:
         html_content = f.read()
 
+    # Inject Google Analytics tag if not already present
+    google_analytics_tag = '''    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HDCZHZ89S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3HDCZHZ89S');
+    </script>
+
+'''
+    if 'gtag.js' not in html_content:
+        # Insert Google Analytics after RSS feed link and before <style> tag
+        html_content = html_content.replace(
+            '    <!-- RSS Feed -->\n    <link rel="alternate" type="application/rss+xml" title="SEMCL.ONE News Feed" href="https://community.semcl.one/feed.xml">\n\n    <style>',
+            f'    <!-- RSS Feed -->\n    <link rel="alternate" type="application/rss+xml" title="SEMCL.ONE News Feed" href="https://community.semcl.one/feed.xml">\n\n{google_analytics_tag}    <style>'
+        )
+
     # Update the overall progress - look for stat-number instead of stat-value
     html_content = re.sub(
         r'<div class="stat-number">\d+\.?\d*%</div>',
