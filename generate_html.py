@@ -145,7 +145,7 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'Semantic CopycatM',
+            'name': 'CopycatM',
             'component_id': 'semantic-copycat-miner',
             'github': None,
             'pypi': None,

@@ -153,7 +153,7 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'Code Miner',
+            'name': 'CopycatM',
             'github': None,  # Private repository
             'pypi': None,
             'description': 'Detects IP contamination in LLM-generated code through semantic pattern matching',
@@ -358,7 +358,7 @@ def update_readme():
         status_icon = "✅ Ready" if stats['status'] == 'ready' else "🚧 Development"
         
         links = []
-        if stats['name'] == 'Code Miner':
+        if stats['name'] == 'CopycatM':
             links.append("Private Repo")
         else:
             if stats['github_url']:

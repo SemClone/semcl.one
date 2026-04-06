@@ -23,7 +23,7 @@
 | Component | Version | License | Status | Links |
 |-----------|---------|---------|--------|-------|
 | **PURL to Source**<br/>*Downloads source code from Package URLs supporting npm, PyPI, Maven, Go, and more* | 1.2.4 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2src) · [PyPI](https://pypi.org/project/purl2src/) |
-| **Code Miner**<br/>*Detects IP contamination in LLM-generated code through semantic pattern matching* | 1.7.0 | Private Beta | ✅ Ready | Private Repo |
+| **CopycatM**<br/>*Detects IP contamination in LLM-generated code through semantic pattern matching* | 1.7.0 | Private Beta | ✅ Ready | Private Repo |
 | **Binary Sniffer**<br/>*Identifies hidden OSS components embedded in binary files through signature matching* | 1.11.3 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/binarysniffer) · [PyPI](https://pypi.org/project/binarysniffer/) |
 | **Open Agentic Framework**<br/>*AI-powered analysis framework for intelligent code pattern detection and classification* | 0.0.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/oscarvalenzuelab/open_agentic_framework) |
 | **OSS License ID Library**<br/>*High-performance license detection across 700+ SPDX identifiers with confidence scores* | 1.6.3 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/osslili) · [PyPI](https://pypi.org/project/osslili/) |
