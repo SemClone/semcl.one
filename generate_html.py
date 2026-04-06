@@ -41,10 +41,11 @@ def fetch_download_stats(valid_packages: List[str]) -> Tuple[Optional[int], Dict
                     if 'data' in recent and 'total_without_mirrors' in recent['data']:
                         # Get total organic downloads (without_mirrors)
                         downloads = recent['data']['total_without_mirrors']
-                        package_downloads[package_name] = downloads
-                        # Only count downloads for packages in our components list
-                        if package_name in valid_packages:
-                            total_downloads += downloads
+                        if downloads is not None:
+                            package_downloads[package_name] = downloads
+                            # Only count downloads for packages in our components list
+                            if package_name in valid_packages:
+                                total_downloads += downloads
 
         print(f"   Found download data for {len(package_downloads)} packages")
         print(f"   Total downloads (all-time, organic): {total_downloads:,}")
