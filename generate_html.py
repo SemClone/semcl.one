@@ -134,24 +134,6 @@ def generate_html():
     # Define all components (same as in update_readme.py)
     components = [
         {
-            'name': 'Frontend UI',
-            'component_id': 'semantic-copycat-frontend',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-frontend',
-            'pypi': None,
-            'description': 'Web interface for scan submission and results visualization',
-            'category': 'Web Platform',
-            'license': 'MIT'
-        },
-        {
-            'name': 'Backend API', 
-            'component_id': 'semantic-copycat-backend',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-backend',
-            'pypi': None,
-            'description': 'Core API services with scan queue management and orchestration',
-            'category': 'Web Platform',
-            'license': 'MIT'
-        },
-        {
             'name': 'PURL to Source',
             'component_id': 'purl2src',
             'github': 'https://github.com/SemClone/purl2src',
@@ -167,7 +149,7 @@ def generate_html():
             'component_id': 'semantic-copycat-miner',
             'github': None,
             'pypi': None,
-            'description': 'Extracts code patterns and performs initial license detection',
+            'description': 'Detects IP contamination in LLM-generated code through semantic pattern matching',
             'category': 'Analysis Pipeline',
             'status_override': 'complete',
             'version_override': '1.7.0',

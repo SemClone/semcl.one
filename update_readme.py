@@ -144,22 +144,6 @@ def update_readme():
     # Define all components of SEMCL.ONE - Updated list
     components = [
         {
-            'name': 'Frontend UI',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-frontend',
-            'pypi': None,
-            'description': 'Web interface for scan submission and results visualization with enterprise authentication',
-            'license': 'MIT',
-            'status': 'development'
-        },
-        {
-            'name': 'Backend API',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-backend',
-            'pypi': None,
-            'description': 'Core API services with scan queue management, orchestration, and webhook notifications',
-            'license': 'MIT',
-            'status': 'development'
-        },
-        {
             'name': 'PURL to Source',
             'github': 'https://github.com/SemClone/purl2src',
             'pypi': 'purl2src',
@@ -172,7 +156,7 @@ def update_readme():
             'name': 'Code Miner',
             'github': None,  # Private repository
             'pypi': None,
-            'description': 'Extracts code patterns and performs initial license detection using semantic analysis',
+            'description': 'Detects IP contamination in LLM-generated code through semantic pattern matching',
             'license': 'Private Beta',
             'status': 'ready',
             'version_override': '1.7.0'
