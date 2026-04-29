@@ -189,6 +189,15 @@ def update_readme():
             'status_override': 'complete'
         },
         {
+            'name': 'OSS Notices',
+            'github': 'https://github.com/SemClone/ossnotices',
+            'pypi': 'ossnotices',
+            'description': 'Simplified CLI wrapper for generating open source legal notices',
+            'license': 'MIT',
+            'status': 'ready',
+            'status_override': 'complete'
+        },
+        {
             'name': 'UPMEX',
             'github': 'https://github.com/SemClone/upmex',
             'pypi': 'upmex',
