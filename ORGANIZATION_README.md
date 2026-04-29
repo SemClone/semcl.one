@@ -36,7 +36,6 @@ Source Input → Package Resolution → Code Analysis → License Detection → 
 ### License & Compliance
 - **[osslili](https://github.com/SemClone/osslili)** - High-performance license detection across 700+ SPDX identifiers with confidence scores
 - **[purl2notices](https://github.com/SemClone/purl2notices)** - Generates legal notices with licenses and copyright information for compliance
-- **SCMA** - Semantic Code Analysis Advisory system for intelligent risk assessment
 
 ### AI & Intelligence
 - **PURL2Risk** - Comprehensive risk intelligence including CVEs, business continuity, and OSS health metrics *(In Development)*

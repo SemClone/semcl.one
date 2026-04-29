@@ -200,15 +200,6 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'SCMA',
-            'component_id': 'semantic-copycat-ccda',
-            'github': 'https://github.com/oscarvalenzuelab/semantic-copycat-ccda',
-            'pypi': None,
-            'description': 'SEMCL Advisory - Evolution of OSSA Scanner for semantic code copycat detection and advisory generation',
-            'category': 'License Analysis',
-            'license': 'MIT'
-        },
-        {
             'name': 'UPMEX',
             'component_id': 'semantic-copycat-upmex',
             'github': 'https://github.com/SemClone/upmex',
