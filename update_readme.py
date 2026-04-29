@@ -362,30 +362,8 @@ def update_readme():
             ' · '.join(links) if links else 'GitHub (planned)'
         )
     
-    # Add platform capabilities section
+    # Add summary statistics section
     readme_content += """
----
-
-## Platform Capabilities
-
-### ✅ Available Features
-
-- **Package Download Engine** - Automated source retrieval from PURL (npm, PyPI, Maven, Go, Cargo)
-- **Code Pattern Mining** - Advanced signature extraction and semantic analysis algorithms
-- **Binary Component Scanner** - Detection of embedded OSS components in compiled binaries
-- **License Detection System** - Identification of 700+ SPDX licenses with confidence scoring
-- **Metadata Extraction** - Universal parser supporting 13 package ecosystems
-- **Source Identification** - Package coordinate mapping using SWHIDs and fingerprinting
-
-### 🚧 In Development
-
-- **Web Management Interface** - Enterprise dashboard for scan submission and monitoring
-- **RESTful API** - Programmatic access with authentication and rate limiting
-- **Automated Notice Generation** - Legal document creation with attribution requirements
-- **Batch Processing Pipeline** - Concurrent analysis of multiple packages with queue management
-- **Compliance Dashboard** - Real-time metrics, trends, and risk assessment reports
-- **CI/CD Integration** - Native plugins for Jenkins, GitLab, GitHub Actions
-
 ---
 
 ## Summary Statistics
@@ -406,7 +384,7 @@ Visit the [project website](https://semcl.one) for more information, or explore 
 
 ## License
 
-Copyright © 2025 SEMCL.ONE | Enterprise OSS Compliance Platform""".format(
+Copyright © 2026 SEMCL.ONE by AInvirion""".format(
         len(components),
         total_ready,
         total_dev
