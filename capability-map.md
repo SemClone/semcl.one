@@ -18,7 +18,6 @@ graph TB
         MINER[Code Miner<br/>Pattern Extraction]
         BINARY[Binary Sniffer<br/>Binary Analysis]
         SRC2ID[Source To ID<br/>Source Identification]
-        AGENT[Open Agentic Framework<br/>AI Analysis]
     end
 
     subgraph "License & Compliance"
@@ -44,12 +43,13 @@ graph TB
     
     UPMEX --> DB
     
-    MINER --> AGENT
-    BINARY --> AGENT
-    SRC2ID --> AGENT
+    MINER --> OSLILI
+    BINARY --> OSLILI
+    SRC2ID --> OSLILI
+    MINER --> SCMA
+    BINARY --> SCMA
+    SRC2ID --> SCMA
     
-    AGENT --> OSLILI
-    AGENT --> SCMA
     OSLILI --> NOTICE
     OSLILI --> SCMA
     
@@ -65,7 +65,6 @@ graph TB
     style MINER fill:#d1fae5
     style BINARY fill:#d1fae5
     style SRC2ID fill:#d1fae5
-    style AGENT fill:#d1fae5
     style OSLILI fill:#d1fae5
     style NOTICE fill:#fef3c7
     style DB fill:#e5e7eb
@@ -103,7 +102,6 @@ sequenceDiagram
         PURL2Src->>Analyzers: Source To ID
     end
     
-    Analyzers->>Analyzers: Agentic Framework
     Analyzers->>License: OSS License ID Library
     License->>License: PURL to Notices
     License->>Storage: Save results
@@ -201,7 +199,6 @@ graph LR
 | **PURL to Source** | ✅ Ready | • 13+ package registries<br/>• Automatic unpacking<br/>• Version resolution<br/>• Cache management |
 | **Code Miner** | ✅ Ready | • Pattern extraction<br/>• Code fingerprinting<br/>• Initial license detection<br/>• Semantic analysis |
 | **Binary Sniffer** | ✅ Ready | • ELF/PE analysis<br/>• String extraction<br/>• Symbol detection<br/>• Embedded OSS finding |
-| **Agentic Framework** | ✅ Ready | • AI-powered analysis<br/>• Pattern learning<br/>• Risk scoring<br/>• Intelligent classification |
 | **OSS License ID Library** | ✅ Ready | • 700+ SPDX licenses<br/>• Confidence scoring<br/>• Multi-method detection<br/>• Evidence collection |
 | **PURL to Notices** | 🚧 Development | • Legal notice generation<br/>• Attribution formatting<br/>• License text inclusion<br/>• Compliance documentation |
 | **SCMA** | 🚧 Development | • Advisory generation<br/>• Semantic clone detection<br/>• Typosquatting detection<br/>• Risk assessment |

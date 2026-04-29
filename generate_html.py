@@ -167,17 +167,6 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'Open Agentic Framework',
-            'component_id': 'open-agentic-framework',
-            'github': 'https://github.com/oscarvalenzuelab/open_agentic_framework',
-            'pypi': None,
-            'description': 'Agentic analysis framework for intelligent code pattern detection',
-            'category': 'Analysis Pipeline',
-            'license': 'Apache-2.0',
-            'status_override': 'complete',
-            'completion_override': 100.0
-        },
-        {
             'name': 'OSS License ID Library',
             'component_id': 'semantic-copycat-oslili',
             'github': 'https://github.com/SemClone/osslili',

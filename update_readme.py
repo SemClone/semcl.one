@@ -171,15 +171,6 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'Open Agentic Framework',
-            'github': 'https://github.com/oscarvalenzuelab/open_agentic_framework',
-            'pypi': None,
-            'description': 'AI-powered analysis framework for intelligent code pattern detection and classification',
-            'license': 'Apache-2.0',
-            'status': 'ready',
-            'status_override': 'complete'
-        },
-        {
             'name': 'OSS License ID Library',
             'github': 'https://github.com/SemClone/osslili',
             'pypi': 'osslili',
@@ -391,7 +382,6 @@ def update_readme():
 - **Code Pattern Mining** - Advanced signature extraction and semantic analysis algorithms
 - **Binary Component Scanner** - Detection of embedded OSS components in compiled binaries
 - **License Detection System** - Identification of 700+ SPDX licenses with confidence scoring
-- **AI-Powered Analysis** - Intelligent pattern recognition using agentic framework
 - **Metadata Extraction** - Universal parser supporting 13 package ecosystems
 - **Source Identification** - Package coordinate mapping using SWHIDs and fingerprinting
 

@@ -39,7 +39,6 @@ Source Input → Package Resolution → Code Analysis → License Detection → 
 - **SCMA** - Semantic Code Analysis Advisory system for intelligent risk assessment
 
 ### AI & Intelligence
-- **Open Agentic Framework** - AI-powered analysis framework for intelligent code pattern detection and classification
 - **PURL2Risk** - Comprehensive risk intelligence including CVEs, business continuity, and OSS health metrics *(In Development)*
 
 ## Platform Capabilities

@@ -8,9 +8,9 @@
 
 ### Overall Project Completion
 
-**92%** Complete | **12/13** Components Ready
+**92%** Complete | **11/12** Components Ready
 
-██████████████████████████████████████████████░░░░
+█████████████████████████████████████████████░░░░░
 
 </div>
 
@@ -25,7 +25,6 @@
 | **PURL to Source**<br/>*Downloads source code from Package URLs supporting npm, PyPI, Maven, Go, and more* | 1.2.4 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2src) · [PyPI](https://pypi.org/project/purl2src/) |
 | **CopycatM**<br/>*Detects IP contamination in LLM-generated code through semantic pattern matching* | 1.7.0 | Private Beta | ✅ Ready | Private Repo |
 | **Binary Sniffer**<br/>*Identifies hidden OSS components embedded in binary files through signature matching* | 1.11.3 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/binarysniffer) · [PyPI](https://pypi.org/project/binarysniffer/) |
-| **Open Agentic Framework**<br/>*AI-powered analysis framework for intelligent code pattern detection and classification* | 0.0.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/oscarvalenzuelab/open_agentic_framework) |
 | **OSS License ID Library**<br/>*High-performance license detection across 700+ SPDX identifiers with confidence scores* | 1.6.3 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/osslili) · [PyPI](https://pypi.org/project/osslili/) |
 | **PURL to Notices**<br/>*Generates legal notices with licenses and copyright information for compliance* | 1.2.7 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2notices) · [PyPI](https://pypi.org/project/purl2notices/) |
 | **SCMA**<br/>*SEMCL Advisory - Evolution of OSSA Scanner for semantic code copycat detection* | 0.0.0 | MIT | 🚧 Development | GitHub (planned) |
@@ -46,7 +45,6 @@
 - **Code Pattern Mining** - Advanced signature extraction and semantic analysis algorithms
 - **Binary Component Scanner** - Detection of embedded OSS components in compiled binaries
 - **License Detection System** - Identification of 700+ SPDX licenses with confidence scoring
-- **AI-Powered Analysis** - Intelligent pattern recognition using agentic framework
 - **Metadata Extraction** - Universal parser supporting 13 package ecosystems
 - **Source Identification** - Package coordinate mapping using SWHIDs and fingerprinting
 
@@ -67,7 +65,7 @@
 
 | Total Components | Production Ready | In Development | SPDX Licenses Supported |
 |-----------------|------------------|----------------|-------------------------|
-| **13** | **12** | **1** | **700+** |
+| **12** | **11** | **1** | **700+** |
 
 </div>
 
