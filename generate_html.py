@@ -266,6 +266,17 @@ def generate_html():
             'completion_override': 100.0
         },
         {
+            'name': 'SUPHM',
+            'component_id': 'suphm',
+            'github': None,  # Private repository
+            'pypi': 'suphm',
+            'description': 'Supply chain health metrics: analyses OSS package health, maintainer burnout and supply-chain risk',
+            'category': 'Risk Analysis',
+            'license': 'AGPL-3.0',
+            'status_override': 'complete',
+            'completion_override': 100.0
+        },
+        {
             'name': 'OSSVal',
             'component_id': 'ossval',
             'github': 'https://github.com/SemClone/ossval',

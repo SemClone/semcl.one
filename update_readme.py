@@ -252,6 +252,15 @@ def update_readme():
             'status_override': 'complete'
         },
         {
+            'name': 'SUPHM',
+            'github': None,  # Private repository
+            'pypi': 'suphm',
+            'description': 'Supply chain health metrics: analyses OSS package health, maintainer burnout and supply-chain risk',
+            'license': 'AGPL-3.0',
+            'status': 'ready',
+            'status_override': 'complete'
+        },
+        {
             'name': 'OSSVal',
             'github': 'https://github.com/SemClone/ossval',
             'pypi': 'ossval',
