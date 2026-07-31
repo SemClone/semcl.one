@@ -255,6 +255,28 @@ def generate_html():
             'completion_override': 100.0
         },
         {
+            'name': 'OSSBomer',
+            'component_id': 'ossbomer',
+            'github': 'https://github.com/SemClone/ossbomer',
+            'pypi': 'ossbomer',
+            'description': 'Profile-driven SBOM validation, conformance and license policy for SPDX and CycloneDX, where each regulation is one YAML profile and every rule cites the clause it comes from',
+            'category': 'License Analysis',
+            'license': 'Apache-2.0',
+            'status_override': 'complete',
+            'completion_override': 100.0
+        },
+        {
+            'name': 'SUPHM',
+            'component_id': 'suphm',
+            'github': None,  # Private repository
+            'pypi': 'suphm',
+            'description': 'Supply chain health metrics: analyses OSS package health, maintainer burnout and supply-chain risk',
+            'category': 'Risk Analysis',
+            'license': 'AGPL-3.0',
+            'status_override': 'complete',
+            'completion_override': 100.0
+        },
+        {
             'name': 'OSSVal',
             'component_id': 'ossval',
             'github': 'https://github.com/SemClone/ossval',
