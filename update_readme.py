@@ -243,6 +243,15 @@ def update_readme():
             'status_override': 'complete'
         },
         {
+            'name': 'OSSBomer',
+            'github': 'https://github.com/SemClone/ossbomer',
+            'pypi': 'ossbomer',
+            'description': 'Profile-driven SBOM validation, conformance and license policy for SPDX and CycloneDX, where each regulation is one YAML profile and every rule cites the clause it comes from',
+            'license': 'Apache-2.0',
+            'status': 'ready',
+            'status_override': 'complete'
+        },
+        {
             'name': 'OSSVal',
             'github': 'https://github.com/SemClone/ossval',
             'pypi': 'ossval',
