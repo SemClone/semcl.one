@@ -22,7 +22,7 @@
 
 | Component | Version | License | Status | Links |
 |-----------|---------|---------|--------|-------|
-| **PURL to Source**<br/>*Downloads source code from Package URLs supporting npm, PyPI, Maven, Go, and more* | 1.2.4 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2src) · [PyPI](https://pypi.org/project/purl2src/) |
+| **PURL to Source**<br/>*Downloads source code from Package URLs supporting npm, PyPI, Maven, Go, and more* | 1.4.0 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/purl2src) · [PyPI](https://pypi.org/project/purl2src/) |
 | **CopycatM**<br/>*Detects IP contamination in LLM-generated code through semantic pattern matching* | 1.7.0 | Private Beta | ✅ Ready | Private Repo |
 | **Binary Sniffer**<br/>*Identifies hidden OSS components embedded in binary files through signature matching* | 1.11.3 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/binarysniffer) · [PyPI](https://pypi.org/project/binarysniffer/) |
 | **OSS License ID Library**<br/>*High-performance license detection across 700+ SPDX identifiers with confidence scores* | 1.10.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/osslili) · [PyPI](https://pypi.org/project/osslili/) |
@@ -31,7 +31,7 @@
 | **UPMEX**<br/>*Universal package metadata extractor supporting 13 package ecosystems* | 1.7.2 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/upmex) · [PyPI](https://pypi.org/project/upmex/) |
 | **Source to PURL**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.3.5 | AGPL-3.0 | ✅ Ready | [GitHub](https://github.com/SemClone/src2purl) · [PyPI](https://pypi.org/project/src2purl/) |
 | **VulnQ**<br/>*Lightweight, multi-source vulnerability query tool that consolidates security data from OSV.dev, GitHub Advisory, and NIST NVD using PURLs, CPE strings, and file hashes* | 1.5.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/vulnq) · [PyPI](https://pypi.org/project/vulnq/) |
-| **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.9.0 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
+| **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.9.1 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
 | **MCP-SemClone**<br/>*Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain* | 1.6.3 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/mcp-semclone) · [PyPI](https://pypi.org/project/mcp-semclone/) |
 | **OSSBomer**<br/>*Profile-driven SBOM validation, conformance and license policy for SPDX and CycloneDX, where each regulation is one YAML profile and every rule cites the clause it comes from* | 2.4.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ossbomer) · [PyPI](https://pypi.org/project/ossbomer/) |
 | **SUPHM**<br/>*Supply chain health metrics: analyses OSS package health, maintainer burnout and supply-chain risk* | 0.4.3 | AGPL-3.0 | ✅ Ready | [PyPI](https://pypi.org/project/suphm/) |
