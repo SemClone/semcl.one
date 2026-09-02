@@ -18,7 +18,7 @@
 
 ## Component Status Dashboard
 
-*Last updated: 2026-09-01*
+*Last updated: 2026-09-02*
 
 | Component | Version | License | Status | Links |
 |-----------|---------|---------|--------|-------|
@@ -31,7 +31,7 @@
 | **UPMEX**<br/>*Universal package metadata extractor supporting 13 package ecosystems* | 1.7.2 | MIT | ✅ Ready | [GitHub](https://github.com/SemClone/upmex) · [PyPI](https://pypi.org/project/upmex/) |
 | **Source to PURL**<br/>*Identifies package coordinates from source code using SWHIDs and multiple strategies* | 1.4.0 | AGPL-3.0 | ✅ Ready | [GitHub](https://github.com/SemClone/src2purl) · [PyPI](https://pypi.org/project/src2purl/) |
 | **VulnQ**<br/>*Lightweight, multi-source vulnerability query tool that consolidates security data from OSV.dev, GitHub Advisory, and NIST NVD using PURLs, CPE strings, and file hashes* | 1.5.1 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/vulnq) · [PyPI](https://pypi.org/project/vulnq/) |
-| **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.9.1 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
+| **OSPAC**<br/>*Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files* | 1.9.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ospac) · [PyPI](https://pypi.org/project/ospac/) |
 | **MCP-SemClone**<br/>*Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain* | 1.6.3 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/mcp-semclone) · [PyPI](https://pypi.org/project/mcp-semclone/) |
 | **OSSBomer**<br/>*Profile-driven SBOM validation, conformance and license policy for SPDX and CycloneDX, where each regulation is one YAML profile and every rule cites the clause it comes from* | 2.4.2 | Apache-2.0 | ✅ Ready | [GitHub](https://github.com/SemClone/ossbomer) · [PyPI](https://pypi.org/project/ossbomer/) |
 | **SUPHM**<br/>*Supply chain health metrics: analyses OSS package health, maintainer burnout and supply-chain risk* | 0.4.3 | AGPL-3.0 | ✅ Ready | [PyPI](https://pypi.org/project/suphm/) |
