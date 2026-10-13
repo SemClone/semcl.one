@@ -145,17 +145,6 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'CopycatM',
-            'component_id': 'semantic-copycat-miner',
-            'github': None,
-            'pypi': None,
-            'description': 'Detects IP contamination in LLM-generated code through semantic pattern matching',
-            'category': 'Analysis Pipeline',
-            'status_override': 'complete',
-            'version_override': '1.7.0',
-            'license': 'Private Beta'
-        },
-        {
             'name': 'Binary Sniffer',
             'component_id': 'binarysniffer',
             'github': 'https://github.com/SemClone/binarysniffer',
@@ -168,7 +157,7 @@ def generate_html():
         },
         {
             'name': 'OSS License ID Library',
-            'component_id': 'semantic-copycat-oslili',
+            'component_id': 'osslili',
             'github': 'https://github.com/SemClone/osslili',
             'pypi': 'osslili',
             'description': 'High-performance license detection across 700+ SPDX identifiers with confidence scores',
@@ -179,7 +168,7 @@ def generate_html():
         },
         {
             'name': 'PURL to Notices',
-            'component_id': 'semantic-copycat-purl2notice',
+            'component_id': 'purl2notices',
             'github': 'https://github.com/SemClone/purl2notices',
             'pypi': 'purl2notices',
             'description': 'Generates legal notices with licenses and copyright information',
@@ -201,7 +190,7 @@ def generate_html():
         },
         {
             'name': 'UPMEX',
-            'component_id': 'semantic-copycat-upmex',
+            'component_id': 'upmex',
             'github': 'https://github.com/SemClone/upmex',
             'pypi': 'upmex',
             'description': 'Universal package metadata extractor supporting 13 package ecosystems',
