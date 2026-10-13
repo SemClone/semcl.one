@@ -16,7 +16,7 @@ def fetch_github_stats(owner: str, repo: str) -> Optional[Dict]:
     
     headers = {
         'Accept': 'application/vnd.github.v3+json',
-        'User-Agent': 'CopycatCodeDefender-Bot'
+        'User-Agent': 'SEMCL.ONE-Bot'
     }
     
     # Add GitHub token if available (for higher rate limits)
@@ -151,15 +151,6 @@ def update_readme():
             'license': 'MIT',
             'status': 'ready',
             'status_override': 'complete'
-        },
-        {
-            'name': 'CopycatM',
-            'github': None,  # Private repository
-            'pypi': None,
-            'description': 'Detects IP contamination in LLM-generated code through semantic pattern matching',
-            'license': 'Private Beta',
-            'status': 'ready',
-            'version_override': '1.7.0'
         },
         {
             'name': 'Binary Sniffer',
@@ -368,17 +359,14 @@ def update_readme():
         status_icon = "✅ Ready" if stats['status'] == 'ready' else "🚧 Development"
         
         links = []
-        if stats['name'] == 'CopycatM':
-            links.append("Private Repo")
-        else:
-            if stats['github_url']:
-                if stats['github_exists'] or stats.get('status_override') == 'complete':
-                    links.append(f"[GitHub]({stats['github_url']})")
-                else:
-                    links.append("GitHub (planned)")
-            if stats['pypi_url']:
-                if stats['pypi_exists']:
-                    links.append(f"[PyPI]({stats['pypi_url']})")
+        if stats['github_url']:
+            if stats['github_exists'] or stats.get('status_override') == 'complete':
+                links.append(f"[GitHub]({stats['github_url']})")
+            else:
+                links.append("GitHub (planned)")
+        if stats['pypi_url']:
+            if stats['pypi_exists']:
+                links.append(f"[PyPI]({stats['pypi_url']})")
         
         readme_content += "| **{}**<br/>*{}* | {} | {} | {} | {} |\n".format(
             stats['name'],
