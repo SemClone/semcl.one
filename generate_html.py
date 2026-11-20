@@ -233,17 +233,6 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'MCP-SemClone',
-            'component_id': 'mcp-semclone',
-            'github': 'https://github.com/SemClone/mcp-semclone',
-            'pypi': 'mcp-semclone',
-            'description': 'Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain',
-            'category': 'Integration Tools',
-            'license': 'Apache-2.0',
-            'status_override': 'complete',
-            'completion_override': 100.0
-        },
-        {
             'name': 'OSSBomer',
             'component_id': 'ossbomer',
             'github': 'https://github.com/SemClone/ossbomer',
@@ -265,17 +254,6 @@ def generate_html():
             'status_override': 'complete',
             'completion_override': 100.0
         },
-        {
-            'name': 'OSSVal',
-            'component_id': 'ossval',
-            'github': 'https://github.com/SemClone/ossval',
-            'pypi': 'ossval',
-            'description': 'Calculate the development cost savings from using open source software by analyzing SBOMs or package lists using COCOMO II models',
-            'category': 'Risk Analysis',
-            'license': 'Apache-2.0',
-            'status_override': 'complete',
-            'completion_override': 100.0
-        }
     ]
     
     # Fetch stats for all components
