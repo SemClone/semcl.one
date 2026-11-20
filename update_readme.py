@@ -153,15 +153,6 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'Binary Sniffer',
-            'github': 'https://github.com/SemClone/binarysniffer',
-            'pypi': 'binarysniffer',
-            'description': 'Identifies hidden OSS components embedded in binary files through signature matching',
-            'license': 'MIT',
-            'status': 'ready',
-            'status_override': 'complete'
-        },
-        {
             'name': 'OSS License ID Library',
             'github': 'https://github.com/SemClone/osslili',
             'pypi': 'osslili',

@@ -145,17 +145,6 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'Binary Sniffer',
-            'component_id': 'binarysniffer',
-            'github': 'https://github.com/SemClone/binarysniffer',
-            'pypi': 'binarysniffer',
-            'description': 'Identifies hidden OSS components embedded in binary files',
-            'category': 'Analysis Pipeline',
-            'license': 'MIT',
-            'status_override': 'complete',
-            'completion_override': 100.0
-        },
-        {
             'name': 'OSS License ID Library',
             'component_id': 'osslili',
             'github': 'https://github.com/SemClone/osslili',
