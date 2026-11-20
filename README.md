@@ -8,7 +8,7 @@
 
 ### Overall Project Completion
 
-**100%** Complete | **13/13** Components Ready
+**100%** Complete | **11/11** Components Ready
 
 ██████████████████████████████████████████████████
 
@@ -42,7 +42,7 @@
 
 | Total Components | Production Ready | In Development | SPDX Licenses Supported |
 |-----------------|------------------|----------------|-------------------------|
-| **13** | **13** | **0** | **700+** |
+| **11** | **11** | **0** | **700+** |
 
 </div>
 
