@@ -225,15 +225,6 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'MCP-SemClone',
-            'github': 'https://github.com/SemClone/mcp-semclone',
-            'pypi': 'mcp-semclone',
-            'description': 'Model Context Protocol server providing comprehensive OSS compliance and vulnerability analysis capabilities through the SEMCL.ONE toolchain',
-            'license': 'Apache-2.0',
-            'status': 'ready',
-            'status_override': 'complete'
-        },
-        {
             'name': 'OSSBomer',
             'github': 'https://github.com/SemClone/ossbomer',
             'pypi': 'ossbomer',
@@ -251,15 +242,6 @@ def update_readme():
             'status': 'ready',
             'status_override': 'complete'
         },
-        {
-            'name': 'OSSVal',
-            'github': 'https://github.com/SemClone/ossval',
-            'pypi': 'ossval',
-            'description': 'Calculate the development cost savings from using open source software by analyzing SBOMs or package lists using COCOMO II models',
-            'license': 'Apache-2.0',
-            'status': 'ready',
-            'status_override': 'complete'
-        }
     ]
     
     # Fetch stats for all components
