@@ -70,6 +70,29 @@ def format_download_count(count: int) -> str:
         return f"{count / 1000:.1f}K+".replace('.0K+', 'K+')
     return str(count)
 
+def write_tools_json(components, path='tools.json'):
+    """Publish the component list as tools.json so other sites can reuse it.
+
+    No timestamps or download counts: the file only changes when a component
+    is added, removed or described differently. Download totals stay in
+    status.semcl.one/data/stats.json.
+    """
+    tools = [
+        {
+            'id': c['component_id'],
+            'name': c['name'],
+            'pypi': c.get('pypi'),
+            'github': c.get('github'),
+            'description': c['description'],
+            'category': c.get('category', 'Core'),
+            'license': c.get('license', 'TBD'),
+        }
+        for c in components
+    ]
+    with open(path, 'w') as f:
+        json.dump({'source': 'https://semcl.one/', 'tools': tools}, f, indent=2)
+        f.write('\n')
+
 def generate_html():
     """Generate index.html with updated component stats"""
     
@@ -187,6 +210,8 @@ def generate_html():
         },
     ]
     
+    write_tools_json(components)
+
     # Fetch stats for all components
     component_stats = []
     total_components_ready = 0

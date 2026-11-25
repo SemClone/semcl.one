@@ -1,0 +1,95 @@
+{
+  "source": "https://semcl.one/",
+  "tools": [
+    {
+      "id": "purl2src",
+      "name": "PURL to Source",
+      "pypi": "purl2src",
+      "github": "https://github.com/SemClone/purl2src",
+      "description": "Downloads source code from Package URLs (npm, PyPI, Maven, etc.)",
+      "category": "Analysis Pipeline",
+      "license": "MIT"
+    },
+    {
+      "id": "osslili",
+      "name": "OSS License ID Library",
+      "pypi": "osslili",
+      "github": "https://github.com/SemClone/osslili",
+      "description": "High-performance license detection across 700+ SPDX identifiers with confidence scores",
+      "category": "License Analysis",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "purl2notices",
+      "name": "PURL to Notices",
+      "pypi": "purl2notices",
+      "github": "https://github.com/SemClone/purl2notices",
+      "description": "Generates legal notices with licenses and copyright information",
+      "category": "License Analysis",
+      "license": "MIT"
+    },
+    {
+      "id": "ossnotices",
+      "name": "OSS Notices",
+      "pypi": "ossnotices",
+      "github": "https://github.com/SemClone/ossnotices",
+      "description": "Simplified CLI wrapper for generating open source legal notices",
+      "category": "License Analysis",
+      "license": "MIT"
+    },
+    {
+      "id": "upmex",
+      "name": "UPMEX",
+      "pypi": "upmex",
+      "github": "https://github.com/SemClone/upmex",
+      "description": "Universal package metadata extractor supporting 13 package ecosystems",
+      "category": "Analysis Pipeline",
+      "license": "MIT"
+    },
+    {
+      "id": "src2purl",
+      "name": "Source to PURL",
+      "pypi": "src2purl",
+      "github": "https://github.com/SemClone/src2purl",
+      "description": "Identifies package coordinates from source code using SWHIDs and multiple strategies",
+      "category": "Analysis Pipeline",
+      "license": "AGPL-3.0"
+    },
+    {
+      "id": "vulnq",
+      "name": "VulnQ",
+      "pypi": "vulnq",
+      "github": "https://github.com/SemClone/vulnq",
+      "description": "Lightweight, multi-source vulnerability query tool that consolidates security data from OSV.dev, GitHub Advisory, and NIST NVD using PURLs, CPE strings, and file hashes",
+      "category": "Risk Analysis",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "ospac",
+      "name": "OSPAC",
+      "pypi": "ospac",
+      "github": "https://github.com/SemClone/ospac",
+      "description": "Open Source Policy as Code - policy engine with declarative, data-driven compliance logic defined in versionable policy files",
+      "category": "Analysis Pipeline",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "ossbomer",
+      "name": "OSSBomer",
+      "pypi": "ossbomer",
+      "github": "https://github.com/SemClone/ossbomer",
+      "description": "Profile-driven SBOM validation, conformance and license policy for SPDX and CycloneDX, where each regulation is one YAML profile and every rule cites the clause it comes from",
+      "category": "License Analysis",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "suphm",
+      "name": "SUPHM",
+      "pypi": "suphm",
+      "github": null,
+      "description": "Supply chain health metrics: analyses OSS package health, maintainer burnout and supply-chain risk",
+      "category": "Risk Analysis",
+      "license": "AGPL-3.0"
+    }
+  ]
+}
