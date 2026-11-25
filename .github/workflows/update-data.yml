@@ -112,7 +112,7 @@ jobs:
           # Extract current downloads stat for commit message
           downloads=$(grep -B 1 'stat-label">Downloads' index.html | grep 'stat-number' | grep -oP '>\K[^<]+' || echo "unknown")
 
-          git add README.md index.html
+          git add README.md index.html tools.json
           git commit -m "chore: auto-update component stats [skip ci]
 
           - Downloads: $downloads (all-time, organic)
