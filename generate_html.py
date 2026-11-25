@@ -110,7 +110,7 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'OSS License ID Library',
+            'name': 'OSSLili',
             'component_id': 'osslili',
             'github': 'https://github.com/SemClone/osslili',
             'pypi': 'osslili',
@@ -121,7 +121,7 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'PURL to Notices',
+            'name': 'Purl2Notices',
             'component_id': 'purl2notices',
             'github': 'https://github.com/SemClone/purl2notices',
             'pypi': 'purl2notices',
@@ -132,7 +132,7 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'OSS Notices',
+            'name': 'OSSNotices',
             'component_id': 'ossnotices',
             'github': 'https://github.com/SemClone/ossnotices',
             'pypi': 'ossnotices',
@@ -187,7 +187,7 @@ def generate_html():
             'completion_override': 100.0
         },
         {
-            'name': 'OSSBomer',
+            'name': 'OSSBOMer',
             'component_id': 'ossbomer',
             'github': 'https://github.com/SemClone/ossbomer',
             'pypi': 'ossbomer',
