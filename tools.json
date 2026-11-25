@@ -12,7 +12,7 @@
     },
     {
       "id": "osslili",
-      "name": "OSS License ID Library",
+      "name": "OSSLili",
       "pypi": "osslili",
       "github": "https://github.com/SemClone/osslili",
       "description": "High-performance license detection across 700+ SPDX identifiers with confidence scores",
@@ -21,7 +21,7 @@
     },
     {
       "id": "purl2notices",
-      "name": "PURL to Notices",
+      "name": "Purl2Notices",
       "pypi": "purl2notices",
       "github": "https://github.com/SemClone/purl2notices",
       "description": "Generates legal notices with licenses and copyright information",
@@ -30,7 +30,7 @@
     },
     {
       "id": "ossnotices",
-      "name": "OSS Notices",
+      "name": "OSSNotices",
       "pypi": "ossnotices",
       "github": "https://github.com/SemClone/ossnotices",
       "description": "Simplified CLI wrapper for generating open source legal notices",
@@ -75,7 +75,7 @@
     },
     {
       "id": "ossbomer",
-      "name": "OSSBomer",
+      "name": "OSSBOMer",
       "pypi": "ossbomer",
       "github": "https://github.com/SemClone/ossbomer",
       "description": "Profile-driven SBOM validation, conformance and license policy for SPDX and CycloneDX, where each regulation is one YAML profile and every rule cites the clause it comes from",

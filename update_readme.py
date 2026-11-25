@@ -153,7 +153,7 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'OSS License ID Library',
+            'name': 'OSSLili',
             'github': 'https://github.com/SemClone/osslili',
             'pypi': 'osslili',
             'description': 'High-performance license detection across 700+ SPDX identifiers with confidence scores',
@@ -162,7 +162,7 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'PURL to Notices',
+            'name': 'Purl2Notices',
             'github': 'https://github.com/SemClone/purl2notices',
             'pypi': 'purl2notices',
             'description': 'Generates legal notices with licenses and copyright information for compliance',
@@ -171,7 +171,7 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'OSS Notices',
+            'name': 'OSSNotices',
             'github': 'https://github.com/SemClone/ossnotices',
             'pypi': 'ossnotices',
             'description': 'Simplified CLI wrapper for generating open source legal notices',
@@ -216,7 +216,7 @@ def update_readme():
             'status_override': 'complete'
         },
         {
-            'name': 'OSSBomer',
+            'name': 'OSSBOMer',
             'github': 'https://github.com/SemClone/ossbomer',
             'pypi': 'ossbomer',
             'description': 'Profile-driven SBOM validation, conformance and license policy for SPDX and CycloneDX, where each regulation is one YAML profile and every rule cites the clause it comes from',
