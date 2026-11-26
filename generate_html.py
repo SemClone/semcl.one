@@ -319,30 +319,6 @@ def generate_html():
         # Insert Google Analytics before the <style> tag
         html_content = html_content.replace('    <style>', f'{google_analytics_tag}    <style>', 1)
 
-    # Update the overall progress - look for stat-number instead of stat-value
-    html_content = re.sub(
-        r'<div class="stat-number">\d+\.?\d*%</div>',
-        f'<div class="stat-number">{overall_completion:.0f}%</div>',
-        html_content,
-        count=1
-    )
-
-    # Update component count
-    html_content = re.sub(
-        r'(<div class="stat-card">\s*<div class="stat-number">)\d+(</div>\s*<div class="stat-label">Components</div>)',
-        f'\\g<1>{len(components)}\\g<2>',
-        html_content,
-        flags=re.DOTALL
-    )
-
-    # Update downloads count
-    html_content = re.sub(
-        r'(<div class="stat-card">\s*<div class="stat-number">)[^<]+(</div>\s*<div class="stat-label">Downloads</div>)',
-        f'\\g<1>{downloads_display}\\g<2>',
-        html_content,
-        flags=re.DOTALL
-    )
-
     # Sort components: Ready components first, then In Dev components
     # We need to create tuples of (component, stats) to keep them paired
     component_pairs = list(zip(components, component_stats))
