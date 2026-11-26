@@ -1,6 +1,6 @@
 # SEMCL.ONE
 
-> **Enterprise OSS Compliance Toolchain - production-ready tools for license detection, SBOM validation, vulnerability data, and policy enforcement**
+> **Enterprise OSS Compliance Toolchain - production-ready tools for license detection, SBOM validation, vulnerability data, and policy verification**
 
 ## Project Overview
 
