@@ -297,7 +297,7 @@ def update_readme():
     # Build the new README content - Simplified format
     readme_content = """# SEMCL.ONE
 
-> **Enterprise OSS Compliance Platform - Comprehensive code similarity detection and license compliance for modern software development**
+> **Enterprise OSS Compliance Toolchain - production-ready tools for license detection, SBOM validation, vulnerability data, and policy verification**
 
 ## Project Overview
 
